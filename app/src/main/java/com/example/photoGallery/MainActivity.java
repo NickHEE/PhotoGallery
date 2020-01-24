@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.io.File;
@@ -42,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+    public void filterGallery(View view) {
+        Intent intent = new Intent(this, FilterActivity.class);
+        startActivity(intent);
+    }
+
+
     private File createImageFile() throws IOException {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
