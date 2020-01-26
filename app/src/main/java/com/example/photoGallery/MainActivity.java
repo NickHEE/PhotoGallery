@@ -15,13 +15,18 @@ import android.widget.ImageView;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
-
+import java.util.Collection;
 import java.util.Date;
 import java.util.ArrayList;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,15 +34,32 @@ public class MainActivity extends AppCompatActivity {
     private int photoIdx = 0;
     private ArrayList<String> photoList;
     private String photoPath = null;
+    private File dataFile;
+    private Photo currentPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        dataFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "data.json");
+
+        try {
+            if (dataFile.createNewFile()) {
+                FileOutputStream stream = new FileOutputStream(dataFile);
+                stream.write("[]".getBytes());
+                stream.close();
+            }
+        }
+        catch (IOException ex) {
+            Log.d("onCreate", "Data file creation FAIL" );
+        }
+
         setContentView(R.layout.activity_main);
 
         Date minDate = new Date(Long.MIN_VALUE);
         Date maxDate = new Date(Long.MAX_VALUE);
         photoList = populateGallery(minDate, maxDate);
+        displayPhoto(photoList.get(photoIdx));
+
     }
 
     public void takePicture(View v) {
@@ -86,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
         photoIdx = photoIdx < 0 ? 0 : photoIdx >= photoList.size() ? photoList.size() - 1 : photoIdx;
         photoPath = photoList.get(photoIdx);
+
         displayPhoto(photoPath);
     }
 
@@ -101,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(imageFileName, ".jpg",storageDir);
         photoPath = image.getAbsolutePath();
+        currentPhoto = new Photo(photoPath, timeStamp);
+
         return image;
     }
 
@@ -112,45 +137,53 @@ public class MainActivity extends AppCompatActivity {
             Log.d("onActivityResult", "Image Capture OK");
             ImageView mImageView = (ImageView) findViewById(R.id.iv_gallery);
             mImageView.setImageBitmap(BitmapFactory.decodeFile(photoPath));
+
+            int length = (int) dataFile.length();
+            byte[] bytes = new byte[length];
+
+            try {
+                FileInputStream dataIn = new FileInputStream(dataFile);
+                dataIn.read(bytes);
+                dataIn.close();
+            }
+            catch (IOException ex) {
+                Log.d("onActivityResult", "Read from dataFile FAILED");
+            }
+
+            String json = new String(bytes);
+            Gson gson = new Gson();
+            Type collectionType = new TypeToken<Collection<Photo>>(){}.getType();
+            Collection<Photo> photoList = gson.fromJson(json, collectionType);
+
+            photoList.add(currentPhoto);
+            json = gson.toJson(photoList);
+
+            try {
+                FileOutputStream stream = new FileOutputStream(dataFile,false);
+                stream.write(json.getBytes());
+                stream.close();
+            }
+            catch (IOException ex) {
+                Log.d("onActivityResult", "write to dataFile FAILED");
+            }
         }
         else {
             Log.d("onActivityResult", "Image Capture FAIL");
         }
     }
 
-//    private class Photo {
-//
-//        private Date date;
-//        private String caption;
-//        private String fileName;
-//        private File file;
-//
-//        public Photo() {
-//
-//            date = new Date();
-//            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(date);
-//            fileName = "JPEG_" + timeStamp + "_";
-//        }
-//
-//        public Date getDate() {
-//            return date;
-//        }
-//
-//        public String getCaption() {
-//            return caption;
-//        }
-//
-//        public void makeFile() throws IOException {
-//
-//            File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-//            file = File.createTempFile(fileName, ".jpg", dir);
-//        }
-//
-//        public File getFile() {
-//            return file;
-//        }
-//
-//    }
+    private class Photo {
+
+        private String caption = "Enter a caption";
+        private String filePath;
+        private String timeStamp;
+
+        public Photo(String filePath, String timeStamp) {
+            this.filePath = filePath;
+            this.timeStamp = timeStamp;
+
+        }
+    }
 }
 
 
