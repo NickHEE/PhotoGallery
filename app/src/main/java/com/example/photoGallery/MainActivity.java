@@ -12,12 +12,14 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -43,15 +45,17 @@ public class MainActivity extends AppCompatActivity {
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             File photoFile = null;
             try {
-                photoFile = new Photo();
+                photoFile = createImageFile();
             } catch (IOException ex) {
-                // Error occurred while creating the File
+                Log.d("takePicture", "createImageFile() IOException");
             }
             // Continue only if the File was successfully created
             if (photoFile != null) {
+                Log.d("takePicture", "createImageFile() Success");
                 Uri photoURI = FileProvider.getUriForFile(this, "com.example.photoGallery.fileprovider", photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+
             }
         }
     }
@@ -81,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         photoIdx = photoIdx < 0 ? 0 : photoIdx >= photoList.size() ? photoList.size() - 1 : photoIdx;
-
         photoPath = photoList.get(photoIdx);
         displayPhoto(photoPath);
     }
@@ -104,42 +107,50 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Log.d("onActivityResult", "Image Capture OK");
             ImageView mImageView = (ImageView) findViewById(R.id.iv_gallery);
             mImageView.setImageBitmap(BitmapFactory.decodeFile(photoPath));
         }
+        else {
+            Log.d("onActivityResult", "Image Capture FAIL");
+        }
     }
+
+//    private class Photo {
+//
+//        private Date date;
+//        private String caption;
+//        private String fileName;
+//        private File file;
+//
+//        public Photo() {
+//
+//            date = new Date();
+//            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(date);
+//            fileName = "JPEG_" + timeStamp + "_";
+//        }
+//
+//        public Date getDate() {
+//            return date;
+//        }
+//
+//        public String getCaption() {
+//            return caption;
+//        }
+//
+//        public void makeFile() throws IOException {
+//
+//            File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+//            file = File.createTempFile(fileName, ".jpg", dir);
+//        }
+//
+//        public File getFile() {
+//            return file;
+//        }
+//
+//    }
 }
 
-
-public class Photo {
-
-    private Date date;
-    private String caption;
-    private File file;
-
-    public Photo(File dir, String cap) {
-
-        date = new Date();
-
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(date);
-        String fileName = "JPEG_" + timeStamp + "_";
-        file = File.createTempFile(fileName, ".jpg", dir);
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public String getCaption() {
-        return caption;
-    }
-
-    public File getFile() {
-        return file;
-    }
-
-
-
-}
 
