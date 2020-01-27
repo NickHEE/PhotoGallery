@@ -15,84 +15,149 @@
         android:id="@+id/title_search"
         android:textSize="30sp" />
 
-    <EditText
-        android:id="@+id/search_fromDate"
+
+    <TextView
+        android:id="@+id/tvDate_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title_search"
-        android:layout_alignEnd="@+id/title_search"
-        android:layout_alignRight="@+id/title_search"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginRight="34dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="75dp"
+        android:clickable="true"
+        android:datePickerMode="spinner"
+        android:hint="Select Date"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvDate_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="140dp"
+        android:clickable="true"
+        android:datePickerMode="spinner"
+        android:hint="Select Date"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/Location_TR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDate_to"
+        android:layout_alignEnd="@+id/tvDate_to"
+        android:layout_alignRight="@+id/tvDate_to"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="-103dp"
+        android:layout_marginRight="-103dp"
         android:ems="10"
-        android:inputType="date" />
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/Location_BL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Location_TR"
+        android:layout_alignEnd="@+id/Location_TR"
+        android:layout_alignRight="@+id/Location_TR"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginRight="-3dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/Comment_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Location_BL"
+        android:layout_alignEnd="@+id/Location_BL"
+        android:layout_alignRight="@+id/Location_BL"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <TextView
         android:text="From Date: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/search_fromDate"
+        android:layout_alignBottom="@+id/tvDate_from"
         android:layout_alignLeft="@+id/title_search"
         android:layout_alignStart="@+id/title_search"
         android:layout_marginBottom="11dp"
         android:id="@+id/search_fromDateLabel" />
 
-    <EditText
-        android:id="@+id/search_toDate"
+    <TextView
+        android:id="@+id/search_toDateLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_fromDate"
-        android:layout_alignEnd="@+id/search_fromDate"
-        android:layout_alignRight="@+id/search_fromDate"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="-3dp"
-        android:layout_marginRight="-3dp"
-        android:ems="10"
-        android:inputType="date" />
+        android:layout_alignStart="@+id/search_fromDateLabel"
+        android:layout_alignLeft="@+id/search_fromDateLabel"
+        android:layout_alignTop="@+id/search_fromDateLabel"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="64dp"
+        android:text="To Date: " />
+
 
     <TextView
-        android:text="To Date: "
+        android:id="@+id/top_right_CornerLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/search_toDate"
-        android:layout_alignLeft="@+id/search_fromDateLabel"
-        android:layout_alignStart="@+id/search_fromDateLabel"
-        android:layout_marginTop="12dp"
-        android:id="@+id/search_toDateLabel" />
+        android:layout_alignStart="@+id/search_toDateLabel"
+        android:layout_alignLeft="@+id/search_toDateLabel"
+        android:layout_alignTop="@+id/search_toDateLabel"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginTop="68dp"
+        android:text="Top Right Corner: " />
+
+    <TextView
+        android:id="@+id/bottom_left_CornerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/top_right_CornerLabel"
+        android:layout_alignLeft="@+id/top_right_CornerLabel"
+        android:layout_alignTop="@+id/top_right_CornerLabel"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="64dp"
+        android:text="Bottom Left Corner: " />
+
+    <TextView
+        android:id="@+id/comment_SearchLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bottom_left_CornerLabel"
+        android:layout_alignLeft="@+id/bottom_left_CornerLabel"
+        android:layout_alignTop="@+id/bottom_left_CornerLabel"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="68dp"
+        android:text="Comment Search: " />
 
     <Button
-        android:text="Cancel"
+        android:id="@+id/search_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tvDate_to"
+        android:layout_alignRight="@+id/tvDate_to"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/search_toDate"
-        android:layout_alignEnd="@+id/search_toDate"
-        android:layout_marginRight="55dp"
         android:layout_marginEnd="55dp"
-        android:id="@+id/search_cancel"
-        android:onClick="cancel" />
+        android:layout_marginRight="55dp"
+        android:layout_marginBottom="0dp"
+        android:onClick="cancel"
+        android:text="Cancel" />
 
     <Button
         android:text="Search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/search_toDateLabel"
-        android:layout_toEndOf="@+id/search_toDateLabel"
+        android:layout_toRightOf="@+id/tvDate_to"
+        android:layout_toEndOf="@+id/tvDate_to"
         android:id="@+id/search_search"
         android:onClick="search" />
 
-
-    <TextView
-        android:datePickerMode="spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Select Date"
-        android:id="@+id/tvDate"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
-        android:clickable = "true"
-        android:textSize="30sp"/>
 
 </RelativeLayout>
