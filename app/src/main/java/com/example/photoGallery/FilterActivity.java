@@ -101,7 +101,7 @@ public class FilterActivity extends AppCompatActivity {
     public void search(final View v) {
         Intent i = new Intent();
         i.putExtra("STARTDATE", fromDate.getText().toString());
-        i.putExtra("ENDDATE", toDate.getText().toString());
+        i.putExtra("ENDDATE", toDate.getText().toString() + "_23_59_59");
         i.putExtra("COMMENTSEARCH", commentSearch.getText().toString());
 
         setResult(RESULT_OK, i);

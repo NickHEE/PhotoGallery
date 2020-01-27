@@ -191,16 +191,20 @@ public class MainActivity extends AppCompatActivity {
     private void displayPhoto(Photo photo) {
         date.setVisibility(View.VISIBLE);
         location.setVisibility(View.VISIBLE);
+        imgV.setVisibility(View.VISIBLE);
 
         imgV.setImageBitmap(BitmapFactory.decodeFile(photo.getPath()));
         date.setText(photo.getTimeStampPretty());
         caption.setText(photo.getCaption());
+        caption.setEnabled(true);
     }
 
     private void noPhotoFound() {
         date.setVisibility(View.INVISIBLE);
         location.setVisibility(View.INVISIBLE);
+        imgV.setVisibility(View.INVISIBLE);
         caption.setText("No Photos Found!");
+        caption.setEnabled(false);
     }
 
     private File createImageFile() throws IOException {
@@ -266,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
             Collection<Photo> photos = readDataFile();
             photos.add(currentPhoto);
             writeDataFile(photos);
-            
+
             // Update active photo list
             photoList.add(currentPhoto);
             photoIdx = photoList.indexOf(currentPhoto);
@@ -276,8 +280,10 @@ public class MainActivity extends AppCompatActivity {
         else if (requestCode == REQUEST_FILTER_ACTIVITY && resultCode == RESULT_OK) {
             String s_d1 = data.getStringExtra("STARTDATE");
             String s_d2 = data.getStringExtra("ENDDATE");
-            String loc1 = data.getStringExtra("STARTLOCATION");
-            String loc2 = data.getStringExtra("ENDLOCATION");
+//            String loc1 = data.getStringExtra("STARTLOCATION");
+//            String loc2 = data.getStringExtra("ENDLOCATION");
+            String loc1 = "";
+            String loc2 = "";
             String caption = data.getStringExtra("COMMENTSEARCH");
 
             Log.d("onActivityResult", s_d1);
