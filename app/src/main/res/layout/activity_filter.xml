@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Photogallery Application"
+        android:text="Photogallery Filter"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/title_search"
@@ -39,53 +39,29 @@
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/Location_TR"
+        android:id="@+id/Comment_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvDate_to"
         android:layout_alignEnd="@+id/tvDate_to"
         android:layout_alignRight="@+id/tvDate_to"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="-103dp"
-        android:layout_marginRight="-103dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/Location_BL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Location_TR"
-        android:layout_alignEnd="@+id/Location_TR"
-        android:layout_alignRight="@+id/Location_TR"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="-3dp"
-        android:layout_marginRight="-3dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/Comment_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Location_BL"
-        android:layout_alignEnd="@+id/Location_BL"
-        android:layout_alignRight="@+id/Location_BL"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
+        android:layout_marginEnd="-59dp"
+        android:layout_marginRight="-59dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <TextView
-        android:text="From Date: "
+        android:id="@+id/search_fromDateLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tvDate_from"
-        android:layout_alignLeft="@+id/title_search"
         android:layout_alignStart="@+id/title_search"
-        android:layout_marginBottom="11dp"
-        android:id="@+id/search_fromDateLabel" />
+        android:layout_alignLeft="@+id/title_search"
+        android:layout_alignBottom="@+id/tvDate_from"
+        android:layout_marginStart="-65dp"
+        android:layout_marginLeft="-65dp"
+        android:layout_marginBottom="8dp"
+        android:text="From Date: " />
 
     <TextView
         android:id="@+id/search_toDateLabel"
@@ -100,52 +76,26 @@
         android:text="To Date: " />
 
 
-    <TextView
-        android:id="@+id/top_right_CornerLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/search_toDateLabel"
-        android:layout_alignLeft="@+id/search_toDateLabel"
-        android:layout_alignTop="@+id/search_toDateLabel"
-        android:layout_marginStart="-1dp"
-        android:layout_marginLeft="-1dp"
-        android:layout_marginTop="68dp"
-        android:text="Top Right Corner: " />
-
-    <TextView
-        android:id="@+id/bottom_left_CornerLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/top_right_CornerLabel"
-        android:layout_alignLeft="@+id/top_right_CornerLabel"
-        android:layout_alignTop="@+id/top_right_CornerLabel"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="64dp"
-        android:text="Bottom Left Corner: " />
 
     <TextView
         android:id="@+id/comment_SearchLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/bottom_left_CornerLabel"
-        android:layout_alignLeft="@+id/bottom_left_CornerLabel"
-        android:layout_alignTop="@+id/bottom_left_CornerLabel"
+        android:layout_alignStart="@+id/search_toDateLabel"
+        android:layout_alignLeft="@+id/search_toDateLabel"
+        android:layout_alignTop="@+id/search_toDateLabel"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="68dp"
-        android:text="Comment Search: " />
+        android:text="Caption Search: " />
 
     <Button
         android:id="@+id/search_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tvDate_to"
-        android:layout_alignRight="@+id/tvDate_to"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="55dp"
-        android:layout_marginRight="55dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="2dp"
+        android:layout_alignParentLeft="true"
         android:onClick="cancel"
         android:text="Cancel" />
 
@@ -154,8 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/tvDate_to"
-        android:layout_toEndOf="@+id/tvDate_to"
+        android:layout_alignParentRight="true"
         android:id="@+id/search_search"
         android:onClick="search" />
 
