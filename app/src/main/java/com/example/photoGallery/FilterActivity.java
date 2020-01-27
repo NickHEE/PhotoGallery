@@ -11,29 +11,30 @@ import android.widget.TextView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.app.DatePickerDialog;
-import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import android.widget.EditText;
 import android.util.Log;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Locale;
 
 
 
 public class FilterActivity extends AppCompatActivity {
 
-    private EditText fromDate;
-    private EditText toDate;
+    private TextView fromDate;
+    private TextView toDate;
+    private EditText TRLocation;
+    private EditText BLLocation;
+    private EditText commentSearch;
+
     private Calendar fromCalendar;
     private Calendar toCalendar;
     private DatePickerDialog.OnDateSetListener fromListener;
     private DatePickerDialog.OnDateSetListener toListener;
 
-    private TextView mDisplayDate;
-    private DatePickerDialog.OnDateSetListener mDateSetListener;
+    private DatePickerDialog.OnDateSetListener mDateSetListener_from;
+    private DatePickerDialog.OnDateSetListener mDateSetListener_to;
     private static final String TAG = "FilterActivity";
 
     @Override
@@ -41,11 +42,15 @@ public class FilterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
 
-        fromDate = (EditText) findViewById(R.id.search_fromDate);
-        toDate   = (EditText) findViewById(R.id.search_toDate);
+        fromDate = (TextView) findViewById(R.id.tvDate_from);
+        toDate   = (TextView) findViewById(R.id.tvDate_to);
 
-        mDisplayDate = (TextView) findViewById(R.id.tvDate);
-        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+
+        TRLocation = (EditText) findViewById(R.id.Location_TR);
+        BLLocation   = (EditText) findViewById(R.id.Location_BL);
+        commentSearch = (EditText) findViewById(R.id.Comment_search);
+
+        fromDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Calendar cal = Calendar.getInstance();
@@ -55,20 +60,46 @@ public class FilterActivity extends AppCompatActivity {
                 DatePickerDialog dialog = new DatePickerDialog(
                         FilterActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
+                        mDateSetListener_from,
                         year,month,day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
             }
         });
 
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        toDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog dialog = new DatePickerDialog(
+                        FilterActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener_to,
+                        year,month,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        mDateSetListener_from = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
                 Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
                 String date = month + "/" + day + "/" + year;
-                mDisplayDate.setText(date);
+                fromDate.setText(date);
+            }
+        };
+        mDateSetListener_to = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
+                String date = month + "/" + day + "/" + year;
+                toDate.setText(date);
             }
         };
     }
@@ -81,6 +112,10 @@ public class FilterActivity extends AppCompatActivity {
         Intent i = new Intent();
         i.putExtra("STARTDATE", fromDate.getText().toString());
         i.putExtra("ENDDATE", toDate.getText().toString());
+        i.putExtra("STARTLOCATION", TRLocation.getText().toString());
+        i.putExtra("ENDLOCATION", BLLocation.getText().toString());
+        i.putExtra("COMMENTSEARCH", commentSearch.getText().toString());
+
         setResult(RESULT_OK, i);
         finish();
     }
