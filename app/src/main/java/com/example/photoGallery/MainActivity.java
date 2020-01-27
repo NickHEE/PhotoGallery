@@ -10,9 +10,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,25 +25,31 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.Optional;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
+
     private int photoIdx = 0;
-    private ArrayList<String> photoList;
+    private ArrayList<Photo> photoList;
     private String photoPath = null;
     private File dataFile;
     private Photo currentPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("onCreate", "Created!");
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         dataFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "data.json");
 
         try {
@@ -53,13 +63,49 @@ public class MainActivity extends AppCompatActivity {
             Log.d("onCreate", "Data file creation FAIL" );
         }
 
-        setContentView(R.layout.activity_main);
+        EditText caption = (EditText) findViewById(R.id.editText_caption);
+        caption.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (photoList.size() > 0) {
+                    String newCaption = s.toString();
+
+                    //Update datafile
+                    ArrayList<Photo> photos = new ArrayList<Photo>(readDataFile());
+                    Optional<Photo> photo = photos.stream().filter(p -> p.getPath().equals(currentPhoto.getPath())).findAny();
+                    int i = photos.indexOf(photo.get());
+                    Photo newPhoto = photo.get();
+                    newPhoto.setCaption(newCaption);
+                    photos.set(i,newPhoto);
+
+                    writeDataFile(photos);
+
+                    //Update current photolist
+                    photoList.set(photoIdx, newPhoto);
+                    currentPhoto = newPhoto;
+                }
+            }
+        });
 
         Date minDate = new Date(Long.MIN_VALUE);
         Date maxDate = new Date(Long.MAX_VALUE);
-        photoList = populateGallery(minDate, maxDate);
-        displayPhoto(photoList.get(photoIdx));
 
+        populateGallery(minDate, maxDate, "");
+
+        if (photoList.size() > 0) {
+            currentPhoto = photoList.get(photoIdx);
+            displayPhoto(currentPhoto);
+        }
     }
 
     public void takePicture(View v) {
@@ -82,51 +128,96 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private ArrayList<String> populateGallery(Date minDate, Date maxDate) {
-        File file = new File(Environment.getExternalStorageDirectory()
-                .getAbsolutePath(), "/Android/data/com.example.photoGallery/files/Pictures");
-        photoList = new ArrayList<String>();
-        File[] fList = file.listFiles();
-        if (fList != null) {
-            for (File f : file.listFiles()) {
-                photoList.add(f.getPath());
-            }
+    private void populateGallery(final Date minDate, Date maxDate, String caption) {
+
+        Collection<Photo> photos = readDataFile();
+        photos.removeIf(p -> (p.getDate().before(minDate) || p.getDate().after(maxDate)));
+        if (!caption.isEmpty()) {
+            photos.removeIf(p -> (!p.caption.contains(caption)));
         }
-        return photoList;
+
+        photoList = new ArrayList<Photo>(photos);
     }
 
     public void changePicture(View v) {
-        switch (v.getId()) {
-            case R.id.btn_l:
-                photoIdx--;
-                break;
-            case R.id.btn_r:
-                photoIdx++;
-                break;
-            default: break;
+        if (photoList.size() > 0) {
+
+            switch (v.getId()) {
+                case R.id.btn_l:
+                    photoIdx--;
+                    break;
+                case R.id.btn_r:
+                    photoIdx++;
+                    break;
+                default: break;
+            }
+            Log.d("changePicture", Integer.toString(photoIdx));
+
+            photoIdx = photoIdx < 0 ? 0 : photoIdx >= photoList.size() ? photoList.size() - 1 : photoIdx;
+
+            currentPhoto = photoList.get(photoIdx);
+            displayPhoto(currentPhoto);
         }
-
-        photoIdx = photoIdx < 0 ? 0 : photoIdx >= photoList.size() ? photoList.size() - 1 : photoIdx;
-        photoPath = photoList.get(photoIdx);
-
-        displayPhoto(photoPath);
     }
 
-    private void displayPhoto(String path) {
+    private void displayPhoto(Photo photo) {
         ImageView imgV = (ImageView) findViewById(R.id.iv_gallery);
-        imgV.setImageBitmap(BitmapFactory.decodeFile(path));
+        TextView date = (TextView) findViewById(R.id.textView_date);
+        EditText caption = (EditText) findViewById(R.id.editText_caption);
+
+        imgV.setImageBitmap(BitmapFactory.decodeFile(photo.getPath()));
+        date.setText(photo.getTimeStamp());
+        caption.setText(photo.getCaption());
+
     }
 
     private File createImageFile() throws IOException {
         // Create an image file name
+        EditText caption = (EditText) findViewById(R.id.editText_caption);
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(imageFileName, ".jpg",storageDir);
         photoPath = image.getAbsolutePath();
-        currentPhoto = new Photo(photoPath, timeStamp);
+
+        currentPhoto = new Photo(photoPath, timeStamp, caption.toString());
 
         return image;
+    }
+
+    private Collection<Photo> readDataFile() {
+        int length = (int) dataFile.length();
+        byte[] bytes = new byte[length];
+        Gson gson = new Gson();
+
+        try {
+            FileInputStream dataIn = new FileInputStream(dataFile);
+            dataIn.read(bytes);
+            dataIn.close();
+        }
+        catch (IOException ex) {
+            Log.d("readDataFile", "Read from dataFile FAILED");
+            // TODO: return empty collection?
+        }
+
+        String json = new String(bytes);
+        Type collectionType = new TypeToken<Collection<Photo>>(){}.getType();
+
+        return gson.fromJson(json, collectionType);
+    }
+
+    private void writeDataFile(Collection<Photo> photoList) {
+        Gson gson = new Gson();
+        String json = gson.toJson(photoList);
+
+        try {
+            FileOutputStream stream = new FileOutputStream(dataFile,false);
+            stream.write(json.getBytes());
+            stream.close();
+        }
+        catch (IOException ex) {
+            Log.d("writeDataFile", "write to dataFile FAILED");
+        }
     }
 
     @Override
@@ -134,38 +225,15 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+
             Log.d("onActivityResult", "Image Capture OK");
             ImageView mImageView = (ImageView) findViewById(R.id.iv_gallery);
             mImageView.setImageBitmap(BitmapFactory.decodeFile(photoPath));
 
-            int length = (int) dataFile.length();
-            byte[] bytes = new byte[length];
-
-            try {
-                FileInputStream dataIn = new FileInputStream(dataFile);
-                dataIn.read(bytes);
-                dataIn.close();
-            }
-            catch (IOException ex) {
-                Log.d("onActivityResult", "Read from dataFile FAILED");
-            }
-
-            String json = new String(bytes);
-            Gson gson = new Gson();
-            Type collectionType = new TypeToken<Collection<Photo>>(){}.getType();
-            Collection<Photo> photoList = gson.fromJson(json, collectionType);
-
+            Collection<Photo> photoList = readDataFile();
             photoList.add(currentPhoto);
-            json = gson.toJson(photoList);
+            writeDataFile(photoList);
 
-            try {
-                FileOutputStream stream = new FileOutputStream(dataFile,false);
-                stream.write(json.getBytes());
-                stream.close();
-            }
-            catch (IOException ex) {
-                Log.d("onActivityResult", "write to dataFile FAILED");
-            }
         }
         else {
             Log.d("onActivityResult", "Image Capture FAIL");
@@ -178,10 +246,43 @@ public class MainActivity extends AppCompatActivity {
         private String filePath;
         private String timeStamp;
 
-        public Photo(String filePath, String timeStamp) {
+        public Photo(String filePath, String timeStamp, String caption) {
             this.filePath = filePath;
             this.timeStamp = timeStamp;
+            this.caption = caption;
 
+        }
+
+        public Date getDate() {
+            Date date;
+            try {
+                date = new SimpleDateFormat("yyyyMMdd_HHmmss").parse(timeStamp);
+            }
+            catch (ParseException ex) {
+                return new Date();
+            }
+
+            return date;
+        }
+
+        public String getTimeStamp() {
+
+            return timeStamp;
+        }
+
+        public String getPath() {
+
+            return filePath;
+        }
+
+        public String getCaption() {
+
+            return caption;
+        }
+
+        public void setCaption(String cap) {
+
+            caption = cap;
         }
     }
 }
