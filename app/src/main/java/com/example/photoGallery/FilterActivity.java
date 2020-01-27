@@ -110,7 +110,7 @@ public class FilterActivity extends AppCompatActivity {
     public void search(final View v) {
         Intent i = new Intent();
         i.putExtra("STARTDATE", fromDate.getText().toString());
-        i.putExtra("ENDDATE", toDate.getText().toString());
+        i.putExtra("ENDDATE", toDate.getText().toString() + "_23_59_59");
         i.putExtra("STARTLOCATION", TRLocation.getText().toString());
         i.putExtra("ENDLOCATION", BLLocation.getText().toString());
         i.putExtra("COMMENTSEARCH", commentSearch.getText().toString());

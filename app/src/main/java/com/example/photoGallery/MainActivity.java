@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 Date d1 = new SimpleDateFormat("MM/dd/yyyy").parse(s_d1);
-                Date d2 = new SimpleDateFormat("MM/dd/yyyy").parse(s_d2);
+                Date d2 = new SimpleDateFormat("MM/dd/yyyy_HH_mm_ss").parse(s_d2);
                 populateGallery(d1, d2, loc1, loc2, caption);
             }
             catch (ParseException ex)
