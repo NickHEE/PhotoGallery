@@ -72,11 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
                 if (photoList.size() > 0) {
                     String newCaption = s.toString();
 
@@ -94,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
                     photoList.set(photoIdx, newPhoto);
                     currentPhoto = newPhoto;
                 }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
@@ -173,14 +173,13 @@ public class MainActivity extends AppCompatActivity {
 
     private File createImageFile() throws IOException {
         // Create an image file name
-        EditText caption = (EditText) findViewById(R.id.editText_caption);
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(imageFileName, ".jpg",storageDir);
         photoPath = image.getAbsolutePath();
 
-        currentPhoto = new Photo(photoPath, timeStamp, caption.toString());
+        currentPhoto = new Photo(photoPath, timeStamp, "");
 
         return image;
     }
@@ -230,10 +229,10 @@ public class MainActivity extends AppCompatActivity {
             ImageView mImageView = (ImageView) findViewById(R.id.iv_gallery);
             mImageView.setImageBitmap(BitmapFactory.decodeFile(photoPath));
 
-            Collection<Photo> photoList = readDataFile();
+            Collection<Photo> photos = readDataFile();
+            photos.add(currentPhoto);
+            writeDataFile(photos);
             photoList.add(currentPhoto);
-            writeDataFile(photoList);
-
         }
         else {
             Log.d("onActivityResult", "Image Capture FAIL");
