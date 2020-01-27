@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         location.setVisibility(View.VISIBLE);
 
         imgV.setImageBitmap(BitmapFactory.decodeFile(photo.getPath()));
-        date.setText(photo.getTimeStamp());
+        date.setText(photo.getTimeStampPretty());
         caption.setText(photo.getCaption());
     }
 
@@ -262,11 +262,16 @@ public class MainActivity extends AppCompatActivity {
             ImageView mImageView = (ImageView) findViewById(R.id.iv_gallery);
             mImageView.setImageBitmap(BitmapFactory.decodeFile(photoPath));
 
+            // Update data file
             Collection<Photo> photos = readDataFile();
             photos.add(currentPhoto);
             writeDataFile(photos);
+            
+            // Update active photo list
             photoList.add(currentPhoto);
-            //TODO: change index to current photo
+            photoIdx = photoList.indexOf(currentPhoto);
+            displayPhoto(currentPhoto);
+            //TODO: Don't add photo if not in current filter range?
         }
         else if (requestCode == REQUEST_FILTER_ACTIVITY && resultCode == RESULT_OK) {
             String s_d1 = data.getStringExtra("STARTDATE");
@@ -318,6 +323,12 @@ public class MainActivity extends AppCompatActivity {
         public String getTimeStamp() {
 
             return timeStamp;
+        }
+        public String getTimeStampPretty(){
+            Date d = getDate();
+
+            return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(d);
+
         }
         public String getPath() {
 
