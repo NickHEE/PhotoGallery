@@ -16,7 +16,7 @@
         android:layout_marginStart="236dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="33dp"
-        android:text="Joseph's Dungeon" />
+        android:text="Location Here" />
 
     <Button
         android:id="@+id/btn_snap"
@@ -62,7 +62,7 @@
         android:layout_marginStart="133dp"
         android:layout_marginEnd="145dp"
         android:layout_marginBottom="150dp"
-        android:onClick="takePicture"
+        android:onClick="onFilter"
         android:text="filter" />
 
     <Button

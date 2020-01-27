@@ -38,20 +38,32 @@ import com.google.gson.reflect.TypeToken;
 public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    static final int REQUEST_FILTER_ACTIVITY = 2;
 
     private int photoIdx = 0;
     private ArrayList<Photo> photoList;
     private String photoPath = null;
     private File dataFile;
-    private Photo currentPhoto;
+    private Photo currentPhoto; //TODO: Get rid of this?
+
+    private ImageView imgV;
+    private TextView date;
+    private TextView location;
+    private EditText caption;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("onCreate", "Created!");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dataFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "data.json");
 
+        imgV = (ImageView) findViewById(R.id.iv_gallery);
+        date = (TextView) findViewById(R.id.textView_date);
+        caption = (EditText) findViewById(R.id.editText_caption);
+        location = (TextView) findViewById(R.id.textView_location);
+
+        dataFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "data.json");
         try {
             if (dataFile.createNewFile()) {
                 FileOutputStream stream = new FileOutputStream(dataFile);
@@ -100,12 +112,17 @@ public class MainActivity extends AppCompatActivity {
         Date minDate = new Date(Long.MIN_VALUE);
         Date maxDate = new Date(Long.MAX_VALUE);
 
-        populateGallery(minDate, maxDate, "");
+        populateGallery(minDate, maxDate, "", "", "");
 
         if (photoList.size() > 0) {
             currentPhoto = photoList.get(photoIdx);
             displayPhoto(currentPhoto);
         }
+    }
+
+    public void onFilter(View v) {
+        Intent i = new Intent(MainActivity.this, FilterActivity.class);
+        startActivityForResult(i, REQUEST_FILTER_ACTIVITY);
     }
 
     public void takePicture(View v) {
@@ -128,7 +145,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void populateGallery(final Date minDate, Date maxDate, String caption) {
+    private void populateGallery(Date minDate, Date maxDate, String startLocation, String endLocation, String caption) {
+        //TODO: handle location
 
         Collection<Photo> photos = readDataFile();
         photos.removeIf(p -> (p.getDate().before(minDate) || p.getDate().after(maxDate)));
@@ -137,6 +155,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         photoList = new ArrayList<Photo>(photos);
+
+        if (photoList.size() > 0) {
+            photoIdx = 0;
+            currentPhoto = photoList.get(photoIdx);
+            displayPhoto(currentPhoto);
+        }
+        else {
+            noPhotoFound();
+        }
+
     }
 
     public void changePicture(View v) {
@@ -161,14 +189,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayPhoto(Photo photo) {
-        ImageView imgV = (ImageView) findViewById(R.id.iv_gallery);
-        TextView date = (TextView) findViewById(R.id.textView_date);
-        EditText caption = (EditText) findViewById(R.id.editText_caption);
+        date.setVisibility(View.VISIBLE);
+        location.setVisibility(View.VISIBLE);
 
         imgV.setImageBitmap(BitmapFactory.decodeFile(photo.getPath()));
         date.setText(photo.getTimeStamp());
         caption.setText(photo.getCaption());
+    }
 
+    private void noPhotoFound() {
+        date.setVisibility(View.INVISIBLE);
+        location.setVisibility(View.INVISIBLE);
+        caption.setText("No Photos Found!");
     }
 
     private File createImageFile() throws IOException {
@@ -196,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (IOException ex) {
             Log.d("readDataFile", "Read from dataFile FAILED");
-            // TODO: return empty collection?
+            // TODO: handle exception
         }
 
         String json = new String(bytes);
@@ -216,6 +248,7 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (IOException ex) {
             Log.d("writeDataFile", "write to dataFile FAILED");
+            // TODO: handle exception
         }
     }
 
@@ -233,9 +266,30 @@ public class MainActivity extends AppCompatActivity {
             photos.add(currentPhoto);
             writeDataFile(photos);
             photoList.add(currentPhoto);
+            //TODO: change index to current photo
         }
-        else {
-            Log.d("onActivityResult", "Image Capture FAIL");
+        else if (requestCode == REQUEST_FILTER_ACTIVITY && resultCode == RESULT_OK) {
+            String s_d1 = data.getStringExtra("STARTDATE");
+            String s_d2 = data.getStringExtra("ENDDATE");
+            String loc1 = data.getStringExtra("STARTLOCATION");
+            String loc2 = data.getStringExtra("ENDLOCATION");
+            String caption = data.getStringExtra("COMMENTSEARCH");
+
+            Log.d("onActivityResult", s_d1);
+            Log.d("onActivityResult", s_d2);
+            Log.d("onActivityResult", loc1);
+            Log.d("onActivityResult", loc2);
+            Log.d("onActivityResult", caption);
+
+            try {
+                Date d1 = new SimpleDateFormat("MM/dd/yyyy").parse(s_d1);
+                Date d2 = new SimpleDateFormat("MM/dd/yyyy").parse(s_d2);
+                populateGallery(d1, d2, loc1, loc2, caption);
+            }
+            catch (ParseException ex)
+            {
+                Log.d("onActivityResult", ex.toString());
+            }
         }
     }
 
@@ -248,8 +302,6 @@ public class MainActivity extends AppCompatActivity {
         public Photo(String filePath, String timeStamp, String caption) {
             this.filePath = filePath;
             this.timeStamp = timeStamp;
-            this.caption = caption;
-
         }
 
         public Date getDate() {
@@ -263,22 +315,18 @@ public class MainActivity extends AppCompatActivity {
 
             return date;
         }
-
         public String getTimeStamp() {
 
             return timeStamp;
         }
-
         public String getPath() {
 
             return filePath;
         }
-
         public String getCaption() {
 
             return caption;
         }
-
         public void setCaption(String cap) {
 
             caption = cap;
