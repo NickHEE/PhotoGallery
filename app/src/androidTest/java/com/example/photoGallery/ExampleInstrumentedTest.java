@@ -1,25 +1,32 @@
 package com.example.photoGallery;
 
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.view.View;
+import android.util.Log;
 
 import androidx.test.espresso.contrib.PickerActions;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.internal.matchers.TypeSafeMatcher;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.clearText;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -33,27 +40,59 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 public class ExampleInstrumentedTest {
     private static final String TEST_CAPTION = "Random Caption";
     private static final String FILTER_CAPTION = "Sample Caption 1";
+
+    private Matcher<View> hasValueEqualTo(final String content) {
+
+        return new TypeSafeMatcher<View>() {
+
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("Has EditText/TextView the value:  " + content);
+            }
+
+            @Override
+            public boolean matchesSafely(View view) {
+                if (!(view instanceof TextView) && !(view instanceof EditText)) {
+                    return false;
+                }
+                if (view != null) {
+                    String text;
+                    if (view instanceof TextView) {
+                        text = ((TextView) view).getText().toString();
+                        Log.d("hasValueEqualTo", text);
+                    } else {
+                        text = ((EditText) view).getText().toString();
+                        Log.d("hasValueEqualTo", text);
+                    }
+
+                    return (text.equalsIgnoreCase(content));
+                }
+                return false;
+            }
+        };
+    }
+
     @Rule
     public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
     @Test
     public void ensureTextChangesWork() {
         // Espresso cannot interact with external apps. Therefore, assume pictures already taken
         // change the current image's caption
+        onView(withId(R.id.editText_caption)).perform(clearText(), closeSoftKeyboard());
         onView(withId(R.id.editText_caption)).perform(typeText(TEST_CAPTION), closeSoftKeyboard());
 
         // scroll right
         onView(withId(R.id.btn_r)).perform(click());
 
         // change the current image's caption
+        onView(withId(R.id.editText_caption)).perform(clearText(), closeSoftKeyboard());
         onView(withId(R.id.editText_caption)).perform(typeText(FILTER_CAPTION), closeSoftKeyboard());
 
         // scroll left
         onView(withId(R.id.btn_l)).perform(click());
 
         // TEST: see if caption entered earlier was retained
-        onView(withId(R.id.editText_caption)).check(matches(withText(TEST_CAPTION)));
-// above is untested (don't know if it will work)
-
+        onView(withId(R.id.editText_caption)).check(matches(hasValueEqualTo(TEST_CAPTION)));
 
 
         // go into filter activity
@@ -75,9 +114,10 @@ public class ExampleInstrumentedTest {
         // apply the search filter (go back to main activity)
         onView(withId(R.id.search_search)).perform(click());
 
-// below is untested (don't know if it will work)
         // TEST: see if filtered image has correct caption
-        onView(withId(R.id.editText_caption)).check(matches(withText(TEST_CAPTION)));
+        onView(withId(R.id.editText_caption)).check(matches(hasValueEqualTo(FILTER_CAPTION)));
     }
 }
+
+
 
