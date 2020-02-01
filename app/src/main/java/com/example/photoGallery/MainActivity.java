@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private String photoPath = null;
     private File dataFile;
     private Photo currentPhoto; //TODO: Get rid of this?
-
+//xp xp
     private ImageView imgV;
     private TextView date;
     private TextView location;
