@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+<<<<<<< HEAD
 
     private void populateGallery(Date minDate, Date maxDate, String startLocation, String endLocation, String caption) {
         //TODO: handle location
@@ -206,6 +207,13 @@ public class MainActivity extends AppCompatActivity {
         caption.setText("No Photos Found!");
         caption.setEnabled(false);
     }
+=======
+    public void filterGallery(View view) {
+        Intent intent = new Intent(this, FilterActivity.class);
+        startActivity(intent);
+    }
+
+>>>>>>> 4111a2f2b6e2bdc698ff47148a7a2242a94928d7
 
     private File createImageFile() throws IOException {
         // Create an image file name

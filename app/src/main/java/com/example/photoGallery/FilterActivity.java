@@ -1,4 +1,5 @@
 package com.example.photoGallery;
+<<<<<<< HEAD
 //
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -14,6 +15,26 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
+=======
+
+import android.app.DatePickerDialog;
+import android.widget.DatePicker;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+
+import java.util.Calendar;
+
+import android.widget.TextView;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
+import android.widget.EditText;
+import android.util.Log;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+>>>>>>> 4111a2f2b6e2bdc698ff47148a7a2242a94928d7
 
 
 
@@ -21,8 +42,19 @@ public class FilterActivity extends AppCompatActivity {
 
     private TextView fromDate;
     private TextView toDate;
+<<<<<<< HEAD
     private EditText commentSearch;
 
+=======
+    private EditText TRLocation;
+    private EditText BLLocation;
+    private EditText commentSearch;
+
+    private Calendar fromCalendar;
+    private Calendar toCalendar;
+    private DatePickerDialog.OnDateSetListener fromListener;
+    private DatePickerDialog.OnDateSetListener toListener;
+>>>>>>> 4111a2f2b6e2bdc698ff47148a7a2242a94928d7
 
     private DatePickerDialog.OnDateSetListener mDateSetListener_from;
     private DatePickerDialog.OnDateSetListener mDateSetListener_to;
@@ -37,7 +69,12 @@ public class FilterActivity extends AppCompatActivity {
         toDate   = (TextView) findViewById(R.id.tvDate_to);
 
 
+<<<<<<< HEAD
 
+=======
+        TRLocation = (EditText) findViewById(R.id.Location_TR);
+        BLLocation   = (EditText) findViewById(R.id.Location_BL);
+>>>>>>> 4111a2f2b6e2bdc698ff47148a7a2242a94928d7
         commentSearch = (EditText) findViewById(R.id.Comment_search);
 
         fromDate.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +138,13 @@ public class FilterActivity extends AppCompatActivity {
     public void search(final View v) {
         Intent i = new Intent();
         i.putExtra("STARTDATE", fromDate.getText().toString());
+<<<<<<< HEAD
         i.putExtra("ENDDATE", toDate.getText().toString() + "_23_59_59");
+=======
+        i.putExtra("ENDDATE", toDate.getText().toString());
+        i.putExtra("STARTLOCATION", TRLocation.getText().toString());
+        i.putExtra("ENDLOCATION", BLLocation.getText().toString());
+>>>>>>> 4111a2f2b6e2bdc698ff47148a7a2242a94928d7
         i.putExtra("COMMENTSEARCH", commentSearch.getText().toString());
 
         setResult(RESULT_OK, i);
