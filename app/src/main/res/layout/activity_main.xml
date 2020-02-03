@@ -33,7 +33,6 @@
         android:text="snap" />
 
     <ImageView
-<<<<<<< HEAD
         android:id="@+id/iv_gallery"
         android:layout_width="353dp"
         android:layout_height="273dp"
@@ -49,7 +48,6 @@
         android:layout_marginEnd="29dp"
         android:layout_marginRight="29dp"
         android:layout_marginBottom="187dp"
-=======
         android:id="@+id/ivGallery"
         android:layout_width="297dp"
         android:layout_height="189dp"
@@ -61,12 +59,10 @@
         android:layout_marginLeft="54dp"
         android:layout_marginTop="148dp"
         android:layout_marginRight="62dp"
->>>>>>> 4111a2f2b6e2bdc698ff47148a7a2242a94928d7
         android:adjustViewBounds="true"
         android:maxWidth="42dp"
         android:maxHeight="42dp"
         android:scaleType="fitXY" />
-<<<<<<< HEAD
 
     <Button
         android:id="@+id/btn_filter"
@@ -97,22 +93,18 @@
     <Button
         android:id="@+id/btn_l"
         android:layout_width="70dp"
-=======
 
     <Button
         android:id="@+id/btnSnap"
         android:layout_width="135dp"
->>>>>>> 4111a2f2b6e2bdc698ff47148a7a2242a94928d7
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-<<<<<<< HEAD
         android:layout_marginStart="37dp"
         android:layout_marginEnd="304dp"
         android:layout_marginBottom="152dp"
         android:onClick="changePicture"
-=======
         android:layout_marginStart="144dp"
         android:layout_marginEnd="134dp"
         android:layout_marginBottom="17dp"
@@ -156,13 +148,11 @@
         android:layout_marginEnd="303dp"
         android:layout_marginBottom="138dp"
         android:onClick="takePicture"
->>>>>>> 4111a2f2b6e2bdc698ff47148a7a2242a94928d7
         android:text="left" />
 
     <TextView
         android:id="@+id/textView_date"
         android:layout_width="wrap_content"
-<<<<<<< HEAD
         android:layout_height="29dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -185,7 +175,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Test Caption" />
-=======
         android:layout_height="46dp"
         android:layout_above="@+id/btnSnap"
         android:layout_alignParentStart="true"
@@ -228,7 +217,6 @@
         android:visibility="visible"
         android:text="Caption" />
 
->>>>>>> 4111a2f2b6e2bdc698ff47148a7a2242a94928d7
 
 
 </RelativeLayout>
