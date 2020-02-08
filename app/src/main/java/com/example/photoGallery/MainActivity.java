@@ -1,11 +1,21 @@
 package com.example.photoGallery;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
+import android.location.Address;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.location.Location;
+import android.location.Geocoder;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -30,6 +40,8 @@ import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 import com.google.gson.Gson;
@@ -45,12 +57,28 @@ public class MainActivity extends AppCompatActivity {
     private String photoPath = null;
     private File dataFile;
     private Photo currentPhoto; //TODO: Get rid of this?
+    private Location currentLocation;
 
     private ImageView imgV;
     private TextView date;
     private TextView location;
     private EditText caption;
 
+    Geocoder geocoder;
+    private LocationManager locationManager;
+    private LocationListener locationListener = new LocationListener() {
+
+        public void onLocationChanged(Location location) {
+            // Called when a new location is found by the network location provider.
+            currentLocation = location;
+        }
+
+        public void onStatusChanged(String provider, int status, Bundle extras) {}
+
+        public void onProviderEnabled(String provider) {}
+
+        public void onProviderDisabled(String provider) {}
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,13 +139,26 @@ public class MainActivity extends AppCompatActivity {
 
         Date minDate = new Date(Long.MIN_VALUE);
         Date maxDate = new Date(Long.MAX_VALUE);
+        geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
 
-        populateGallery(minDate, maxDate, "", "", "");
+
+        populateGallery(minDate, maxDate, new Location(""), 0.0, "");
 
         if (photoList.size() > 0) {
             currentPhoto = photoList.get(photoIdx);
             displayPhoto(currentPhoto);
         }
+
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Log.d("onCreate", "requesting permission");
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+        }
+        try {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        } catch(SecurityException ex) {Log.d("onCreate", ex.toString());}
+
+
     }
 
     public void onFilter(View v) {
@@ -145,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void populateGallery(Date minDate, Date maxDate, String startLocation, String endLocation, String caption) {
+    private void populateGallery(Date minDate, Date maxDate, Location location, Double distance, String caption) {
         //TODO: handle location
 
         Collection<Photo> photos = readDataFile();
@@ -164,7 +205,6 @@ public class MainActivity extends AppCompatActivity {
         else {
             noPhotoFound();
         }
-
     }
 
     public void changePicture(View v) {
@@ -195,6 +235,7 @@ public class MainActivity extends AppCompatActivity {
 
         imgV.setImageBitmap(BitmapFactory.decodeFile(photo.getPath()));
         date.setText(photo.getTimeStampPretty());
+        location.setText(photo.getLocationString(geocoder));
         caption.setText(photo.getCaption());
         caption.setEnabled(true);
     }
@@ -261,8 +302,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-
             Log.d("onActivityResult", "Image Capture OK");
+
+            currentPhoto.setLocation(currentLocation);
             ImageView mImageView = (ImageView) findViewById(R.id.iv_gallery);
             mImageView.setImageBitmap(BitmapFactory.decodeFile(photoPath));
 
@@ -286,8 +328,8 @@ public class MainActivity extends AppCompatActivity {
             String loc2 = "";
             String caption = data.getStringExtra("COMMENTSEARCH");
 
-            Log.d("onActivityResult", s_d1);
-            Log.d("onActivityResult", s_d2);
+            //Log.d("onActivityResult", s_d1);
+            //Log.d("onActivityResult", s_d2);
             Log.d("onActivityResult", loc1);
             Log.d("onActivityResult", loc2);
             Log.d("onActivityResult", caption);
@@ -295,7 +337,9 @@ public class MainActivity extends AppCompatActivity {
             try {
                 Date d1 = new SimpleDateFormat("MM/dd/yyyy").parse(s_d1);
                 Date d2 = new SimpleDateFormat("MM/dd/yyyy_HH_mm_ss").parse(s_d2);
-                populateGallery(d1, d2, loc1, loc2, caption);
+                Location loc = new Location("");
+                Double d = 1.0;
+                populateGallery(d1, d2, loc, d, caption);
             }
             catch (ParseException ex)
             {
@@ -309,6 +353,8 @@ public class MainActivity extends AppCompatActivity {
         private String caption = "Enter a caption";
         private String filePath;
         private String timeStamp;
+        private double longitude;
+        private double latitude;
 
         public Photo(String filePath, String timeStamp, String caption) {
             this.filePath = filePath;
@@ -334,7 +380,6 @@ public class MainActivity extends AppCompatActivity {
             Date d = getDate();
 
             return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(d);
-
         }
         public String getPath() {
 
@@ -347,6 +392,26 @@ public class MainActivity extends AppCompatActivity {
         public void setCaption(String cap) {
 
             caption = cap;
+        }
+        public void setLocation(Location loc) {
+            latitude = loc.getLatitude();
+            longitude = loc.getLatitude();
+        }
+        public Location getLocation() {
+            Location location = new Location("");
+            location.setLatitude(latitude);
+            location.setLongitude(latitude);
+
+            return location;
+        }
+        public String getLocationString(Geocoder geocoder) {
+            try {
+                List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
+                Address obj = addresses.get(0);
+                return obj.getAddressLine(0).replace("\n", "");
+            } catch (IOException e) {
+                return "Unknown Location";
+            }
         }
     }
 }
