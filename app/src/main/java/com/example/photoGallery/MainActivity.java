@@ -206,11 +206,6 @@ public class MainActivity extends AppCompatActivity {
         caption.setText("No Photos Found!");
         caption.setEnabled(false);
     }
-    public void filterGallery(View view) {
-        Intent intent = new Intent(this, FilterActivity.class);
-        startActivity(intent);
-    }
-
 
     private File createImageFile() throws IOException {
         // Create an image file name
@@ -355,5 +350,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-
