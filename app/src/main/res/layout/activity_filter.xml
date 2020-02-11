@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".FilterActivity">
 
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="300dp"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,13 +23,12 @@
         android:id="@+id/title_search"
         android:textSize="30sp" />
 
-
     <TextView
         android:id="@+id/tvDate_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="50dp"
         android:clickable="true"
         android:datePickerMode="spinner"
         android:hint="Select Date"
@@ -32,24 +39,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="100dp"
         android:clickable="true"
         android:datePickerMode="spinner"
         android:hint="Select Date"
         android:textSize="30sp" />
-
-    <EditText
-        android:id="@+id/Comment_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvDate_to"
-        android:layout_alignEnd="@+id/tvDate_to"
-        android:layout_alignRight="@+id/tvDate_to"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="-59dp"
-        android:layout_marginRight="-59dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/search_fromDateLabel"
@@ -58,10 +52,11 @@
         android:layout_alignStart="@+id/title_search"
         android:layout_alignLeft="@+id/title_search"
         android:layout_alignBottom="@+id/tvDate_from"
-        android:layout_marginStart="-65dp"
-        android:layout_marginLeft="-65dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="-59dp"
+        android:layout_marginLeft="-59dp"
+        android:layout_marginBottom="12dp"
         android:text="From Date: " />
+
 
     <TextView
         android:id="@+id/search_toDateLabel"
@@ -70,12 +65,8 @@
         android:layout_alignStart="@+id/search_fromDateLabel"
         android:layout_alignLeft="@+id/search_fromDateLabel"
         android:layout_alignTop="@+id/search_fromDateLabel"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="53dp"
         android:text="To Date: " />
-
-
 
     <TextView
         android:id="@+id/comment_SearchLabel"
@@ -84,10 +75,80 @@
         android:layout_alignStart="@+id/search_toDateLabel"
         android:layout_alignLeft="@+id/search_toDateLabel"
         android:layout_alignTop="@+id/search_toDateLabel"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="42dp"
         android:text="Caption Search: " />
+    <EditText
+        android:id="@+id/Comment_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDate_to"
+        android:layout_alignEnd="@+id/tvDate_to"
+        android:layout_alignRight="@+id/tvDate_to"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="-59dp"
+        android:layout_marginRight="-59dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/distance_SearchLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/comment_SearchLabel"
+        android:layout_alignLeft="@+id/comment_SearchLabel"
+        android:layout_alignTop="@+id/comment_SearchLabel"
+        android:layout_marginTop="42dp"
+        android:text="Distance from\npoint (km): " />
+    <EditText
+        android:id="@+id/distance_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Comment_search"
+        android:layout_alignEnd="@+id/Comment_search"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+
+    <TextView
+        android:id="@+id/longitude_SearchLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/distance_SearchLabel"
+        android:layout_alignLeft="@+id/distance_SearchLabel"
+        android:layout_alignTop="@+id/distance_SearchLabel"
+        android:layout_marginTop="49dp"
+        android:text="Longitude: " />
+    <EditText
+        android:id="@+id/longitude_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/distance_search"
+        android:layout_alignStart="@+id/distance_search"
+        android:layout_marginStart="-20dp"
+        android:layout_marginTop="-5dp"
+        android:ems="8"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/latitude_SearchLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/distance_SearchLabel"
+        android:layout_alignLeft="@+id/distance_SearchLabel"
+        android:layout_alignTop="@+id/distance_SearchLabel"
+        android:layout_marginTop="81dp"
+        android:text="Latitude: " />
+    <EditText
+        android:id="@+id/latitude_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/distance_search"
+        android:layout_alignStart="@+id/distance_search"
+        android:layout_marginStart="-20dp"
+        android:layout_marginTop="24dp"
+        android:ems="8"
+        android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/search_cancel"
@@ -107,6 +168,17 @@
         android:layout_alignParentRight="true"
         android:id="@+id/search_search"
         android:onClick="search" />
+
+    <Button
+        android:id="@+id/update_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="319dp"
+        android:onClick="map"
+        android:text="Update Map" />
 
 
 </RelativeLayout>
