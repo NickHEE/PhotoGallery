@@ -47,7 +47,7 @@ public class FilterActivity extends AppCompatActivity implements OnMapReadyCallb
     private LatLng position; // long/lat coordinate of marker
     private Toast toast;     // for popup window notifications
     private GoogleMap mMap;  // map object
-    private static final LatLng BRISBANE = new LatLng(-27.47093, 153.0235); // random initial value for position
+    private static final LatLng DEFAULT_POSITION = new LatLng(-89, 150); // random initial value for position
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,11 +129,9 @@ public class FilterActivity extends AppCompatActivity implements OnMapReadyCallb
         mMap = map;
 
         // set default location for marker
-        marker = mMap.addMarker(new MarkerOptions()
-                .position(BRISBANE)
-                .title("Brisbane"));
+        marker = mMap.addMarker(new MarkerOptions().position(DEFAULT_POSITION));
         marker.setTag(0);
-        position = BRISBANE;
+        position = DEFAULT_POSITION;
 
         // Set a listener for map click.
         mMap.setOnMapClickListener(this);
