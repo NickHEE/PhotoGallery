@@ -23,6 +23,9 @@ android {
         targetCompatibility = 1.8
     }
 }
+repositories {
+    google()
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

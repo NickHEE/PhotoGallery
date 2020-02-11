@@ -141,8 +141,8 @@ public class MainActivity extends AppCompatActivity {
         Date maxDate = new Date(Long.MAX_VALUE);
         geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
 
-
-        populateGallery(minDate, maxDate, new Location(""), 0.0, "");
+        Location test = null;
+        populateGallery(minDate, maxDate, test, 0.0, "");
 
         if (photoList.size() > 0) {
             currentPhoto = photoList.get(photoIdx);
@@ -190,10 +190,15 @@ public class MainActivity extends AppCompatActivity {
         //TODO: handle location
 
         Collection<Photo> photos = readDataFile();
+
         photos.removeIf(p -> (p.getDate().before(minDate) || p.getDate().after(maxDate)));
         if (!caption.isEmpty()) {
             photos.removeIf(p -> (!p.caption.contains(caption)));
         }
+        if (location != null && distance > 0.0) {
+            photos.removeIf(p -> (p.getLocation().distanceTo(location) > distance));
+        }
+
 
         photoList = new ArrayList<Photo>(photos);
 
@@ -322,23 +327,23 @@ public class MainActivity extends AppCompatActivity {
         else if (requestCode == REQUEST_FILTER_ACTIVITY && resultCode == RESULT_OK) {
             String s_d1 = data.getStringExtra("STARTDATE");
             String s_d2 = data.getStringExtra("ENDDATE");
-//            String loc1 = data.getStringExtra("STARTLOCATION");
-//            String loc2 = data.getStringExtra("ENDLOCATION");
-            String loc1 = "";
-            String loc2 = "";
+            double lat = Double.parseDouble(data.getStringExtra("LATITUDE"));
+            double lng = Double.parseDouble(data.getStringExtra("LONGITUDE"));
+            double d = Double.parseDouble(data.getStringExtra("DISTANCE"));
             String caption = data.getStringExtra("COMMENTSEARCH");
 
             //Log.d("onActivityResult", s_d1);
             //Log.d("onActivityResult", s_d2);
-            Log.d("onActivityResult", loc1);
-            Log.d("onActivityResult", loc2);
+            //Log.d("onActivityResult", loc1);
+            //Log.d("onActivityResult", loc2);
             Log.d("onActivityResult", caption);
 
             try {
                 Date d1 = new SimpleDateFormat("MM/dd/yyyy").parse(s_d1);
                 Date d2 = new SimpleDateFormat("MM/dd/yyyy_HH_mm_ss").parse(s_d2);
                 Location loc = new Location("");
-                Double d = 1.0;
+                loc.setLatitude(lat);
+                loc.setLongitude(lng);
                 populateGallery(d1, d2, loc, d, caption);
             }
             catch (ParseException ex)
@@ -409,8 +414,12 @@ public class MainActivity extends AppCompatActivity {
                 List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
                 Address obj = addresses.get(0);
                 return obj.getAddressLine(0).replace("\n", "");
-            } catch (IOException e) {
+            }
+            catch (IndexOutOfBoundsException ex) {
                 return "Unknown Location";
+            }
+            catch (IOException ex) {
+                return "IO Exception you dummy";
             }
         }
     }
