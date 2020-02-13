@@ -9,6 +9,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.LocationListener;
@@ -27,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,6 +49,7 @@ import java.util.Optional;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+
 public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -63,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView date;
     private TextView location;
     private EditText caption;
+    private android.widget.Toast Toast;
+
+    private final String namePackage = "com.discord";
 
     Geocoder geocoder;
     private LocationManager locationManager;
@@ -164,6 +170,33 @@ public class MainActivity extends AppCompatActivity {
     public void onFilter(View v) {
         Intent i = new Intent(MainActivity.this, FilterActivity.class);
         startActivityForResult(i, REQUEST_FILTER_ACTIVITY);
+    }
+
+    public void uploadPicture(View v) {
+
+        // only allow photo to be uploaded if there is a picture selected
+        if (photoList.size() <= 0) {
+            Toast.makeText(getApplicationContext(), "No image selected to upload", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        String filePath = currentPhoto.filePath;
+        File file = new File(filePath);
+        Uri imageUri = FileProvider.getUriForFile(getApplicationContext(),
+                "com.example.photoGallery.fileprovider", file);
+        Intent sendIntent = new Intent(); // make new intent to send
+        sendIntent.setType("image/*");
+        sendIntent.setAction(Intent.ACTION_SEND); // set what you want to do with intent
+        sendIntent.putExtra(Intent.EXTRA_STREAM, imageUri); // attach image file to intent
+        sendIntent.putExtra(Intent.EXTRA_TEXT, caption.getText().toString()); // attach caption to intent
+        sendIntent.setPackage(namePackage); // attach discord as place to send to
+
+        try {
+            startActivity(sendIntent);
+        } catch (android.content.ActivityNotFoundException ex) {
+
+            Toast.makeText(getApplicationContext(), "Error: Unable to send intent.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void takePicture(View v) {
@@ -424,5 +457,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-
