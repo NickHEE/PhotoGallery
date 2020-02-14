@@ -223,7 +223,6 @@ public class MainActivity extends AppCompatActivity {
             photos.removeIf(p -> (p.getLocation().distanceTo(location) > distance));
         }
 
-
         photoList = new ArrayList<Photo>(photos);
 
         if (photoList.size() > 0) {

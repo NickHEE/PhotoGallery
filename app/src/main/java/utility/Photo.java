@@ -21,6 +21,7 @@ public class Photo {
     public Photo(String filePath, String timeStamp, String caption) {
         this.filePath = filePath;
         this.timeStamp = timeStamp;
+        this.caption = caption;
     }
 
     public Date getDate() {
