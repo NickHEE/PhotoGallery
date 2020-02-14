@@ -40,6 +40,9 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 public class ExampleInstrumentedTest {
     private static final String TEST_CAPTION = "Random Caption";
     private static final String FILTER_CAPTION = "I love Surrey";
+    private static final String TEST_LONGITUDE = "-122.8832483";
+    private static final String TEST_LATITUDE = "49.126136";
+    private static final String TEST_DISTANCE = "1000";
 
     private Matcher<View> hasValueEqualTo(final String content) {
 
@@ -110,6 +113,15 @@ public class ExampleInstrumentedTest {
 
         // choose a caption to filter with
         onView(withId(R.id.Comment_search)).perform(typeText(FILTER_CAPTION), closeSoftKeyboard());
+
+        // choose location and distance
+        onView(withId(R.id.distance_search)).perform(click());
+        onView(withId(R.id.distance_search)).perform(typeText(TEST_DISTANCE), closeSoftKeyboard());
+        onView(withId(R.id.longitude_search)).perform(click());
+        onView(withId(R.id.longitude_search)).perform(typeText(TEST_LONGITUDE), closeSoftKeyboard());
+        onView(withId(R.id.latitude_search)).perform(click());
+        onView(withId(R.id.latitude_search)).perform(typeText(TEST_LATITUDE), closeSoftKeyboard());
+        onView(withId(R.id.update_map)).perform(click());
 
         // apply the search filter (go back to main activity)
         onView(withId(R.id.search_search)).perform(click());
