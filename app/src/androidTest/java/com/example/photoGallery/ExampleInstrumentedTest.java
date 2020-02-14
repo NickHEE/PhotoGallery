@@ -39,7 +39,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 @LargeTest
 public class ExampleInstrumentedTest {
     private static final String TEST_CAPTION = "Random Caption";
-    private static final String FILTER_CAPTION = "Sample Caption 1";
+    private static final String FILTER_CAPTION = "I love Surrey";
 
     private Matcher<View> hasValueEqualTo(final String content) {
 
@@ -105,7 +105,7 @@ public class ExampleInstrumentedTest {
 
         // choose the "to date"
         onView(withId(R.id.tvDate_to)).perform(click());
-        onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(PickerActions.setDate(2020, 1, 27));
+        onView(withClassName(Matchers.equalTo(DatePicker.class.getName()))).perform(PickerActions.setDate(2020, 2, 13));
         onView(withId(android.R.id.button1)).perform(click());
 
         // choose a caption to filter with

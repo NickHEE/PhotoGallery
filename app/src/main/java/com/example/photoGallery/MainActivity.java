@@ -433,12 +433,12 @@ public class MainActivity extends AppCompatActivity {
         }
         public void setLocation(Location loc) {
             latitude = loc.getLatitude();
-            longitude = loc.getLatitude();
+            longitude = loc.getLongitude();
         }
         public Location getLocation() {
             Location location = new Location("");
             location.setLatitude(latitude);
-            location.setLongitude(latitude);
+            location.setLongitude(longitude);
 
             return location;
         }
