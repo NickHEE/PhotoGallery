@@ -1,11 +1,11 @@
 package com.example.photoGallery;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import utility.*;
+import com.example.photoGallery.utility.Utility;
+import com.example.photoGallery.utility.Photo;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -25,15 +25,15 @@ public class DataFileUnitTests {
 
     @Test
     public void DataFileReadWrite() {
-        dataFile = utility.Utility.createDataFile(new File("./"), "data.json");
+        dataFile = Utility.createDataFile(new File("./"), "data.json");
         assertTrue(dataFile.exists());
 
         Photo photo = new Photo(filePath, timeStamp, caption);
         ArrayList<Photo> photoList = new ArrayList<Photo>();
         photoList.add(photo);
 
-        utility.Utility.writeDataFile(photoList, dataFile);
-        ArrayList<Photo> _photoList = new ArrayList<>(utility.Utility.readDataFile(dataFile));
+        Utility.writeDataFile(photoList, dataFile);
+        ArrayList<Photo> _photoList = new ArrayList<>(Utility.readDataFile(dataFile));
         Photo _photo = _photoList.get(0);
 
         assertEquals(filePath, _photo.getPath());

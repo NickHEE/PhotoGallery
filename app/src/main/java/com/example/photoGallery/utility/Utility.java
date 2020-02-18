@@ -1,4 +1,4 @@
-package utility;
+package com.example.photoGallery.utility;
 
 import android.util.Log;
 

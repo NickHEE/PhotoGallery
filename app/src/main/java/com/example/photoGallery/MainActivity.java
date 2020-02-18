@@ -9,14 +9,11 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.location.Address;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.Location;
 import android.location.Geocoder;
-import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -28,29 +25,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import utility.Photo;
-import utility.Utility.*;
+import com.example.photoGallery.utility.Utility;
+import com.example.photoGallery.utility.Photo;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -99,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         date = (TextView) findViewById(R.id.textView_date);
         caption = (EditText) findViewById(R.id.editText_caption);
         location = (TextView) findViewById(R.id.textView_location);
-        dataFile = utility.Utility.createDataFile(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "data.json");
+        dataFile = Utility.createDataFile(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "data.json");
 
         EditText caption = (EditText) findViewById(R.id.editText_caption);
         caption.addTextChangedListener(new TextWatcher() {
@@ -114,14 +101,14 @@ public class MainActivity extends AppCompatActivity {
                     String newCaption = s.toString();
 
                     //Update datafile
-                    ArrayList<Photo> photos = new ArrayList<Photo>(utility.Utility.readDataFile(dataFile));
+                    ArrayList<Photo> photos = new ArrayList<Photo>(Utility.readDataFile(dataFile));
                     Optional<Photo> photo = photos.stream().filter(p -> p.getPath().equals(currentPhoto.getPath())).findAny();
                     int i = photos.indexOf(photo.get());
                     Photo newPhoto = photo.get();
                     newPhoto.setCaption(newCaption);
                     photos.set(i,newPhoto);
 
-                    utility.Utility.writeDataFile(photos, dataFile);
+                    Utility.writeDataFile(photos, dataFile);
 
                     //Update current photolist
                     photoList.set(photoIdx, newPhoto);
@@ -213,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
     private void populateGallery(Date minDate, Date maxDate, Location location, Double distance, String caption) {
         //TODO: handle location
 
-        Collection<Photo> photos = utility.Utility.readDataFile(dataFile);
+        Collection<Photo> photos = Utility.readDataFile(dataFile);
 
         photos.removeIf(p -> (p.getDate().before(minDate) || p.getDate().after(maxDate)));
         if (!caption.isEmpty()) {
@@ -301,9 +288,9 @@ public class MainActivity extends AppCompatActivity {
             mImageView.setImageBitmap(BitmapFactory.decodeFile(photoPath));
 
             // Update data file
-            Collection<Photo> photos = utility.Utility.readDataFile(dataFile);
+            Collection<Photo> photos = Utility.readDataFile(dataFile);
             photos.add(currentPhoto);
-            utility.Utility.writeDataFile(photos, dataFile);
+            Utility.writeDataFile(photos, dataFile);
 
             // Update active photo list
             photoList.add(currentPhoto);
