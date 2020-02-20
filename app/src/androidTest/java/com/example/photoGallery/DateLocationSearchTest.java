@@ -14,6 +14,7 @@ import androidx.test.runner.AndroidJUnit4;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.internal.matchers.TypeSafeMatcher;
@@ -34,15 +35,14 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 
-
 @RunWith(AndroidJUnit4.class)
-@LargeTest
-public class ExampleInstrumentedTest {
-    private static final String TEST_CAPTION = "Random Caption";
-    private static final String FILTER_CAPTION = "I love Surrey";
-    private static final String TEST_LONGITUDE = "-122.8832483";
-    private static final String TEST_LATITUDE = "49.126136";
-    private static final String TEST_DISTANCE = "1000";
+@LargeTest // Test takes longer than 1000ms to complete
+public class DateLocationSearchTest {
+    private static String TEST_CAPTION;
+    private static String FILTER_CAPTION;
+    private static String TEST_LONGITUDE;
+    private static String TEST_LATITUDE;
+    private static String TEST_DISTANCE;
 
     private Matcher<View> hasValueEqualTo(final String content) {
 
@@ -76,9 +76,20 @@ public class ExampleInstrumentedTest {
     }
 
     @Rule
-    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class); // Launch main activity
+
+    @Before
+    public void initTestData() {
+        TEST_CAPTION = "Random Caption";
+        FILTER_CAPTION = "I love Surrey";
+        TEST_LONGITUDE = "-122.8832483";
+        TEST_LATITUDE = "49.126136";
+        TEST_DISTANCE = "1000";
+    }
+
     @Test
-    public void ensureTextChangesWork() {
+    public void runDateLocationSearchTest() {
+
         // Espresso cannot interact with external apps. Therefore, assume pictures already taken
         // change the current image's caption
         onView(withId(R.id.editText_caption)).perform(clearText(), closeSoftKeyboard());
@@ -129,6 +140,8 @@ public class ExampleInstrumentedTest {
         // TEST: see if filtered image has correct caption
         onView(withId(R.id.editText_caption)).check(matches(hasValueEqualTo(FILTER_CAPTION)));
     }
+
+
 }
 
 
