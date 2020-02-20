@@ -1,0 +1,20 @@
+Given I am at the gallery screen of the PhotoGallery app
+When I press the filter button
+Then I see the search screen of the PhotoGallery app
+And I see a field labeled latitude
+And I see a field labeled longitude
+And I see a field labeled distance
+When I enter xxx.x as latitude
+And I enter yyy.y as longitude
+And I enter zzz.z as distance
+And I press the button labeled "Search"
+Then I see the gallery screen of the PhotoGallery app
+And I see the pictures taken within zzz.z distance of xxx.x , yyy.y
+
+Assume that the gallery is populated with test pictures from various locations.
+We choose a location and distance to filter for that will return a single photo.
+Check that the correct photo is displayed after filtering
+	currentPhoto.getLocation()
+	Check that location is within test distance. 
+
+
