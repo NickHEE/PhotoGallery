@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Optional;
 
+import com.example.photoGallery.midterm.asyncTaskExample;
 import com.example.photoGallery.utility.Utility;
 import com.example.photoGallery.utility.Photo;
 
@@ -240,6 +241,8 @@ public class MainActivity extends AppCompatActivity {
 
             currentPhoto = photoList.get(photoIdx);
             displayPhoto(currentPhoto);
+
+            new asyncTaskExample(MainActivity.this).execute(photoIdx, photoIdx + 1, photoIdx + 2);
         }
     }
 
