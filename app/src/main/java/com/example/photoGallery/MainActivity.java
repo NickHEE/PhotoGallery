@@ -9,14 +9,11 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.location.Address;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.Location;
 import android.location.Geocoder;
-import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -28,28 +25,22 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import com.example.photoGallery.midterm.asyncTaskExample;
+import com.example.photoGallery.utility.Utility;
+import com.example.photoGallery.utility.Photo;
 
-
+//Http://10.0.2.2:8081/midp/hits
 public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -96,18 +87,7 @@ public class MainActivity extends AppCompatActivity {
         date = (TextView) findViewById(R.id.textView_date);
         caption = (EditText) findViewById(R.id.editText_caption);
         location = (TextView) findViewById(R.id.textView_location);
-
-        dataFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "data.json");
-        try {
-            if (dataFile.createNewFile()) {
-                FileOutputStream stream = new FileOutputStream(dataFile);
-                stream.write("[]".getBytes());
-                stream.close();
-            }
-        }
-        catch (IOException ex) {
-            Log.d("onCreate", "Data file creation FAIL" );
-        }
+        dataFile = Utility.createDataFile(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "data.json");
 
         EditText caption = (EditText) findViewById(R.id.editText_caption);
         caption.addTextChangedListener(new TextWatcher() {
@@ -122,14 +102,14 @@ public class MainActivity extends AppCompatActivity {
                     String newCaption = s.toString();
 
                     //Update datafile
-                    ArrayList<Photo> photos = new ArrayList<Photo>(readDataFile());
+                    ArrayList<Photo> photos = new ArrayList<Photo>(Utility.readDataFile(dataFile));
                     Optional<Photo> photo = photos.stream().filter(p -> p.getPath().equals(currentPhoto.getPath())).findAny();
                     int i = photos.indexOf(photo.get());
                     Photo newPhoto = photo.get();
                     newPhoto.setCaption(newCaption);
                     photos.set(i,newPhoto);
 
-                    writeDataFile(photos);
+                    Utility.writeDataFile(photos, dataFile);
 
                     //Update current photolist
                     photoList.set(photoIdx, newPhoto);
@@ -164,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
         } catch(SecurityException ex) {Log.d("onCreate", ex.toString());}
 
-
     }
 
     public void onFilter(View v) {
@@ -180,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        String filePath = currentPhoto.filePath;
+        String filePath = currentPhoto.getPath();
         File file = new File(filePath);
         Uri imageUri = FileProvider.getUriForFile(getApplicationContext(),
                 "com.example.photoGallery.fileprovider", file);
@@ -222,16 +201,15 @@ public class MainActivity extends AppCompatActivity {
     private void populateGallery(Date minDate, Date maxDate, Location location, Double distance, String caption) {
         //TODO: handle location
 
-        Collection<Photo> photos = readDataFile();
+        Collection<Photo> photos = Utility.readDataFile(dataFile);
 
         photos.removeIf(p -> (p.getDate().before(minDate) || p.getDate().after(maxDate)));
         if (!caption.isEmpty()) {
-            photos.removeIf(p -> (!p.caption.contains(caption)));
+            photos.removeIf(p -> (!p.getCaption().contains(caption)));
         }
         if (location != null && distance > 0.0) {
             photos.removeIf(p -> (p.getLocation().distanceTo(location) > distance));
         }
-
 
         photoList = new ArrayList<Photo>(photos);
 
@@ -263,6 +241,8 @@ public class MainActivity extends AppCompatActivity {
 
             currentPhoto = photoList.get(photoIdx);
             displayPhoto(currentPhoto);
+
+            new asyncTaskExample(MainActivity.this).execute(photoIdx, photoIdx + 1, photoIdx + 2);
         }
     }
 
@@ -299,42 +279,6 @@ public class MainActivity extends AppCompatActivity {
         return image;
     }
 
-    private Collection<Photo> readDataFile() {
-        int length = (int) dataFile.length();
-        byte[] bytes = new byte[length];
-        Gson gson = new Gson();
-
-        try {
-            FileInputStream dataIn = new FileInputStream(dataFile);
-            dataIn.read(bytes);
-            dataIn.close();
-        }
-        catch (IOException ex) {
-            Log.d("readDataFile", "Read from dataFile FAILED");
-            // TODO: handle exception
-        }
-
-        String json = new String(bytes);
-        Type collectionType = new TypeToken<Collection<Photo>>(){}.getType();
-
-        return gson.fromJson(json, collectionType);
-    }
-
-    private void writeDataFile(Collection<Photo> photoList) {
-        Gson gson = new Gson();
-        String json = gson.toJson(photoList);
-
-        try {
-            FileOutputStream stream = new FileOutputStream(dataFile,false);
-            stream.write(json.getBytes());
-            stream.close();
-        }
-        catch (IOException ex) {
-            Log.d("writeDataFile", "write to dataFile FAILED");
-            // TODO: handle exception
-        }
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -347,9 +291,9 @@ public class MainActivity extends AppCompatActivity {
             mImageView.setImageBitmap(BitmapFactory.decodeFile(photoPath));
 
             // Update data file
-            Collection<Photo> photos = readDataFile();
+            Collection<Photo> photos = Utility.readDataFile(dataFile);
             photos.add(currentPhoto);
-            writeDataFile(photos);
+            Utility.writeDataFile(photos, dataFile);
 
             // Update active photo list
             photoList.add(currentPhoto);
@@ -358,17 +302,13 @@ public class MainActivity extends AppCompatActivity {
             //TODO: Don't add photo if not in current filter range?
         }
         else if (requestCode == REQUEST_FILTER_ACTIVITY && resultCode == RESULT_OK) {
+
             String s_d1 = data.getStringExtra("STARTDATE");
             String s_d2 = data.getStringExtra("ENDDATE");
             double lat = Double.parseDouble(data.getStringExtra("LATITUDE"));
             double lng = Double.parseDouble(data.getStringExtra("LONGITUDE"));
             double d = Double.parseDouble(data.getStringExtra("DISTANCE"));
             String caption = data.getStringExtra("COMMENTSEARCH");
-
-            //Log.d("onActivityResult", s_d1);
-            //Log.d("onActivityResult", s_d2);
-            //Log.d("onActivityResult", loc1);
-            //Log.d("onActivityResult", loc2);
             Log.d("onActivityResult", caption);
 
             try {
@@ -386,74 +326,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private class Photo {
 
-        private String caption = "Enter a caption";
-        private String filePath;
-        private String timeStamp;
-        private double longitude;
-        private double latitude;
-
-        public Photo(String filePath, String timeStamp, String caption) {
-            this.filePath = filePath;
-            this.timeStamp = timeStamp;
-        }
-
-        public Date getDate() {
-            Date date;
-            try {
-                date = new SimpleDateFormat("yyyyMMdd_HHmmss").parse(timeStamp);
-            }
-            catch (ParseException ex) {
-                return new Date();
-            }
-
-            return date;
-        }
-        public String getTimeStamp() {
-
-            return timeStamp;
-        }
-        public String getTimeStampPretty(){
-            Date d = getDate();
-
-            return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(d);
-        }
-        public String getPath() {
-
-            return filePath;
-        }
-        public String getCaption() {
-
-            return caption;
-        }
-        public void setCaption(String cap) {
-
-            caption = cap;
-        }
-        public void setLocation(Location loc) {
-            latitude = loc.getLatitude();
-            longitude = loc.getLatitude();
-        }
-        public Location getLocation() {
-            Location location = new Location("");
-            location.setLatitude(latitude);
-            location.setLongitude(latitude);
-
-            return location;
-        }
-        public String getLocationString(Geocoder geocoder) {
-            try {
-                List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
-                Address obj = addresses.get(0);
-                return obj.getAddressLine(0).replace("\n", "");
-            }
-            catch (IndexOutOfBoundsException ex) {
-                return "Unknown Location";
-            }
-            catch (IOException ex) {
-                return "IO Exception you dummy";
-            }
-        }
-    }
 }
