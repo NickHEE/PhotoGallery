@@ -40,6 +40,7 @@ public class HitServlet extends HttpServlet {
 	out.print(photo_index);
 	out.print("<form method=\"POST\"><button name = \"button_press\" type=\"submit\" value = \"Left\"> Left</button></form>");
 	out.print("<form method=\"POST\"><button name = \"button_press\" type=\"submit\" value = \"Right\"> Right</button></form>");
+	out.print("<form method=\"POST\"><button name = \"button_press\" type=\"submit\" value = \"Upload\"> Upload</button></form>");
 
    }
 
@@ -52,22 +53,7 @@ public class HitServlet extends HttpServlet {
 	  
 	  if (button == null)
 	  {// no button was pressed when entering this Servlet
-			
-	  } else if (button.equals("Login"))
-	  {
-		String username1 = "Nicholas";
-		String password1 = "root";
-		if ((username1.equals(request.getParameter("Username"))) && (password1.equals(request.getParameter("Password"))))
-		{
-		  // if username-password correct, display photo gallery things
-		  doGet(request, response);
-		}
-		else 
-		{
-			// if username-password pair not recognized, go back to login form
-			response.setStatus(response.SC_MOVED_TEMPORARILY);
-			response.setHeader("Location", "http://localhost:8081/midp/login_form.html");   
-		}
+		
 	  } else if (button.equals("Left"))
 	  {
 		  photo_index--; 
@@ -75,6 +61,10 @@ public class HitServlet extends HttpServlet {
 	  } else if (button.equals("Right"))
 	  {
 		  photo_index++; 
+		  doGet(request, response);
+	  } else if (button.equals("Upload"))
+	  {
+		  
 		  doGet(request, response);
 	  } 
    }
