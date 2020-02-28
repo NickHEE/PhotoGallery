@@ -40,7 +40,7 @@ import com.example.photoGallery.midterm.asyncTaskExample;
 import com.example.photoGallery.utility.Utility;
 import com.example.photoGallery.utility.Photo;
 
-
+//Http://10.0.2.2:8081/midp/hits
 public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
