@@ -26,6 +26,14 @@
     <url-pattern>/PhotoGallery</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>UploadPage</servlet-name>
+    <servlet-class>UploadServlet</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+    <servlet-name>UploadPage</servlet-name>
+    <url-pattern>/UploadPage</url-pattern>
+  </servlet-mapping>
   
 </web-app>
