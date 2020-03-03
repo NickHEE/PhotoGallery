@@ -9,18 +9,24 @@
     <servlet-name>LoginPage</servlet-name>
     <servlet-class>LoginServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>LoginPage</servlet-name>
     <url-pattern>/LoginPage</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>SearchPage</servlet-name>
+    <servlet-class>SearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchPage</servlet-name>
+    <url-pattern>/SearchPage</url-pattern>
+  </servlet-mapping>
   
   <servlet>
     <servlet-name>PhotoGallery</servlet-name>
-    <servlet-class>HitServlet</servlet-class>
+    <servlet-class>PhotoGalleryServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>PhotoGallery</servlet-name>
     <url-pattern>/PhotoGallery</url-pattern>
@@ -30,10 +36,8 @@
     <servlet-name>UploadPage</servlet-name>
     <servlet-class>UploadServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>UploadPage</servlet-name>
     <url-pattern>/UploadPage</url-pattern>
   </servlet-mapping>
-  
 </web-app>

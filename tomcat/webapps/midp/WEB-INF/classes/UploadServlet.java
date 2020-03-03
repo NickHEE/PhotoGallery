@@ -16,7 +16,7 @@ public class UploadServlet extends HttpServlet {
 
 	  PrintWriter out = response.getWriter();
 	  
-	  String title = "Photo Gallery";
+	  String title = "Upload Files";
 	  String docType =
 		 "<!doctype html public \"-//w3c//dtd html 4.0 " +
 		 "transitional//en\">\n";
@@ -24,40 +24,25 @@ public class UploadServlet extends HttpServlet {
 		 out.println(docType + "<html>\n" +
 		"<head><title>" + title + "</title></head>\n" +
 		"<body bgcolor = \"#f0f0f0\">\n" +
-		"<form method=\"post\" enctype=\"multipart/form-data\">" +
-		"<div>" +
-		"<label for=\"file\">Choose file to upload</label>" +
-		"<input type=\"file\" id=\"file\" name=\"file\" multiple>" +
-		"</div>" +
-		"<div>" +
-		"<button>Submit</button>" +
-		"</div>" +
-		"</form>"+
+			"<h1 align = \"center\">" + title + "</h1>\n" +
+			"<br><br>" +
+			"<form action= \"UploadPage\" method=\"POST\" enctype=\"multipart/form-data\">" +
+				"<table align = \"center\">" +
+					"<tr>"+
+						"<td>"+
+							"<label for=\"file\">Choose file to upload </label>" +
+							"<input type=\"file\" id=\"file\" name=\"file\" multiple>" +
+						"</td>"+
+					"</tr>"+
+					"<tr>"+
+						"<td><button>Submit</button></td>" +
+					"</tr>"+
+				"</table>" +
+			"</form>"+
 	  	"</body>" +
 		"</html>");
-/*
-	  out.println(docType +
-		 "<html>\n" +
-			"<head><title>" + title + "</title></head>\n" +
-			"<body bgcolor = \"#f0f0f0\">\n" +
-			   "<h1 align = \"center\">" + title + "</h1>\n" +
-			   "<ul>\n" +
-				  "  <li><b>First Name</b>: "
-				  + request.getParameter("Username") + "\n" +
-				  "  <li><b>Last Name</b>: "
-				  + request.getParameter("Password") + "\n" +
-			   "</ul>\n" +
-			"</body>" +
-		 "</html>"
-	  );
-	*/  
+
 	  
-	  /*
-	out.print(photo_index);
-	out.print("<form method=\"POST\"><button name = \"button_press\" type=\"submit\" value = \"Left\"> Left</button></form>");
-	out.print("<form method=\"POST\"><button name = \"button_press\" type=\"submit\" value = \"Right\"> Right</button></form>");
-	out.print("<form method=\"POST\"><button name = \"button_press\" type=\"submit\" value = \"Upload\"> Upload</button></form>");
-*/
    }
 
 
@@ -65,7 +50,11 @@ public class UploadServlet extends HttpServlet {
    // Method to handle POST method request.
    public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-	  String button = request.getParameter("button_press");
-	  doGet(request, response);
+		//handle with uploaded image things here (put into database and update necessary values
+		//consider using "if" statement for separating action for valid image file (.jpn, .png, etc.) vs invalid image files (.doc, .xlm, etc.)
+	  
+		response.sendRedirect("/midp/PhotoGallery");
+	  
+	  
 	  }
 }

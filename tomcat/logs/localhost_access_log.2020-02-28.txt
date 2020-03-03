@@ -69,3 +69,10 @@
 0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:54:46 -0800] "POST /midp/PhotoGallery HTTP/1.1" 200 309
 0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:54:47 -0800] "POST /midp/PhotoGallery HTTP/1.1" 200 309
 0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:54:48 -0800] "POST /midp/PhotoGallery HTTP/1.1" 200 309
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:55:29 -0800] "POST /midp/PhotoGallery HTTP/1.1" 200 309
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:55:30 -0800] "POST /midp/PhotoGallery HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:55:30 -0800] "GET /midp/UploadPage HTTP/1.1" 200 354
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:55:46 -0800] "POST /midp/UploadPage HTTP/1.1" 200 354
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:56:02 -0800] "GET /midp/PhotoGallery HTTP/1.1" 200 309
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:56:04 -0800] "POST /midp/PhotoGallery HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:15:56:04 -0800] "GET /midp/UploadPage HTTP/1.1" 200 354
