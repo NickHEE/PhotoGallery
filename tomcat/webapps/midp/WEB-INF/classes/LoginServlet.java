@@ -8,7 +8,7 @@ import java.sql.*;
 public class LoginServlet extends HttpServlet {
 	
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost/photogallery";
+	static final String DB_URL = "jdbc:sqlite:C:\\Users\\Nick\\Desktop\\COMP_Project\\PhotoGallery\\tomcat\\webapps\\midp\\WEB-INF\\classes\\PhotoGallery.db";
   
 	static final String USERNAME = "root";
 	static final String PASS = "ilovebobgill69";
@@ -29,10 +29,16 @@ public class LoginServlet extends HttpServlet {
 
 		String username1 = "Nicholas";
 		String password1 = "root";
+
+		String username = request.getParameter("Username");
+		String password = request.getParameter("Password");
+
+	   	PrintWriter out = response.getWriter();
+
 		if ((username1.equals(request.getParameter("Username"))) && (password1.equals(request.getParameter("Password"))))
 		{
 		  // if username-password correct, display photo gallery things
-		  PrintWriter out = response.getWriter();
+
 		  out.print(1);
 		  response.sendRedirect("/midp/PhotoGallery");
 		}
@@ -40,13 +46,13 @@ public class LoginServlet extends HttpServlet {
 			Connection conn = null;
 			Statement stmt = null;
 			
-			Class.forName(JDBC_DRIVER);
-			conn = DriverManager.getConnection(DB_URL, USERNAME, PASS);
+			//Class.forName(JDBC_DRIVER);
+			conn = DriverManager.getConnection(DB_URL);
 			stmt = conn.createStatement();
-			String query =  "SELECT EXISTS(SELECT * FROM users WHERE "+ "Username = \"%s\" AND " + "`Password` = \"%s\");";
+			String query =  "SELECT * FROM users WHERE "+ "Username = \"%s\" AND " + "Password = \"%s\";";
 			
-			ResultSet rs = stmt.executeQuery(String.format(query, request.getParameter("Username"), request.getParameter("Password")));
-			
+			ResultSet rs = stmt.executeQuery(String.format(query, username, password));
+
 			if (rs.isBeforeFirst()) {
 				response.sendRedirect("/midp/PhotoGallery");
 			}
@@ -54,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 			{
 				// if username-password pair not recognized, go back to login form
 				response.setStatus(response.SC_MOVED_TEMPORARILY);
-				response.setHeader("Location", "http://localhost:8081/midp/login_form.html");   
+				response.setHeader("Location", "http://localhost:8081/midp/login_form.html");
 			}
 			
 			stmt.close();
