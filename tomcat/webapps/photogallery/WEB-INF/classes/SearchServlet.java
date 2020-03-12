@@ -27,7 +27,7 @@ public class SearchServlet extends HttpServlet {
 			   "<h1 align = \"center\">" + title + "</h1>\n" +
 			   "<p align=\"center\"> Choose which filters to use, then input the desired values before clicking \"submit\"</p>" +
 			   "<p align=\"center\">" +
-				   "<form action=\"/midp/PhotoGallery\" method = \"GET\">" + 
+				   "<form action=\"/photogallery/PhotoGallery\" method = \"GET\">" +
 					   "<table align=\"center\">"+
 						  "<tr>"+
 							"<td align = \"right\"><input type = \"checkbox\" name = \"date_box\" /> Chrono filter:</td>"+

@@ -8,8 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 // Extend HttpServlet class
 public class LoginServlet extends HttpServlet {
-	
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+
 	static final String DB_URL = "jdbc:sqlite:F:\\COMP_Project\\PhotoGallery\\tomcat\\webapps\\photogallery\\WEB-INF\\classes\\PhotoGallery.db";
   
 	static final String USERNAME = "root";
@@ -70,9 +69,11 @@ public class LoginServlet extends HttpServlet {
    }
 
 	public boolean validateLogin (String username, String password) {
-		try {
-			Connection conn = null;
-			Statement stmt = null;
+
+		Connection conn = null;
+		Statement stmt = null;
+
+   		try {
 
 			conn = DriverManager.getConnection(DB_URL);
 			stmt = conn.createStatement();
@@ -90,5 +91,11 @@ public class LoginServlet extends HttpServlet {
 			e.printStackTrace();
 			return false;
 		}
+		finally {
+			try {
+				conn.close();
+			} catch (Exception e) {e.printStackTrace();}
+		}
+
 	}
 }
