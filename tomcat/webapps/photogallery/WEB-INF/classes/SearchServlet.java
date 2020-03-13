@@ -30,9 +30,6 @@ public class SearchServlet extends HttpServlet {
 				   "<form action=\"/photogallery/PhotoGallery\" method = \"GET\">" +
 					   "<table align=\"center\">"+
 						  "<tr>"+
-							"<td align = \"right\"><input type = \"checkbox\" name = \"date_box\" /> Chrono filter:</td>"+
-						  "</tr>" +
-						  "<tr>"+
 							"<td align = \"right\"><label for=\"from_date\">From Date:</label></td>" +
 							"<td><input type=\"text\" id=\"from_date\" name=\"from_date\"></td>"+
 						  "</tr>" +
@@ -44,31 +41,25 @@ public class SearchServlet extends HttpServlet {
 							"<td><br></td>"+
 						  "</tr>" +
 						  "<tr>"+
-							"<td align = \"right\"><input type = \"checkbox\" name = \"loc_box\" /> Spatial filter:</td>"+
+							"<td align = \"right\"><label for=\"latitude\">Latitude:</label></td>" +
+							"<td><input type=\"text\" id=\"latitude\" name=\"latitude\"></td>"+
 						  "</tr>" +
 						  "<tr>"+
-							"<td align = \"right\"><label for=\"lat_val\">Latitude:</label></td>" +
-							"<td><input type=\"text\" id=\"lat_val\" name=\"lat_val\"></td>"+
+							"<td align = \"right\"><label for=\"longitude\">Longitude:</label></td>" +
+							"<td><input type=\"text\" id=\"longitude\" name=\"longitude\"></td>"+
 						  "</tr>" +
 						  "<tr>"+
-							"<td align = \"right\"><label for=\"long_val\">Longitude:</label></td>" +
-							"<td><input type=\"text\" id=\"long_val\" name=\"long_val\"></td>"+
-						  "</tr>" +
-						  "<tr>"+
-							"<td align = \"right\"><label for=\"dist_val\">Distance from point:</label></td>" +
-							"<td><input type=\"text\" id=\"dist_val\" name=\"dist_val\"></td>"+
+							"<td align = \"right\"><label for=\"distance\">Distance from point:</label></td>" +
+							"<td><input type=\"text\" id=\"distance\" name=\"distance\"></td>"+
 						  "</tr>" +
 						  "<tr>"+
 							"<td><br></td>"+
 							"</tr>" +
 						  "<tr>"+
-							"<td align = \"right\"><input type = \"checkbox\" name = \"cap_box\" /> Text filter:</td>"+
-						  "</tr>" +
-						  "<tr>"+
-						  "<td align = \"right\"><label for=\"caption_val\">Caption:</label>"+
+						  "<td align = \"right\"><label for=\"caption\">Caption:</label>"+
 						  "</td>" +
 						  "<td>"+
-							"<input type=\"text\" id=\"caption_val\" name=\"caption_val\"></td>"+
+							"<input type=\"text\" id=\"caption\" name=\"caption\"></td>"+
 						  "</tr>" +
 						  "<tr>"+
 							"<td><br></td>"+
@@ -84,7 +75,6 @@ public class SearchServlet extends HttpServlet {
 	  );
 	  
    }
-
 
 
    // Method to handle POST method request.

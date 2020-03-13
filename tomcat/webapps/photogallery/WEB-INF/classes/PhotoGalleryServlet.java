@@ -25,13 +25,14 @@ public class PhotoGalleryServlet extends HttpServlet {
 			"<body bgcolor = \"#f0f0f0\">\n" +
 			"<h1 align = \"center\"> %s </h1>\n" +
 			"<table align = \"center\">"+
+			"<tr><td align=\"left\"> %s </td><td align=\"right\"> %s, %s </td></tr>"+
 			"<tr><td align=\"center\"><img src=\"data\\%s\" style=\"max-width:800px;max-height:600px\"></td></tr>" +
 			"</table>"+
 			"<table align = \"center\">"+
 			"<tr>"+
 			"</tr>"+
 			"<tr>"+
-			"<td align =\"center\"> %s </td>" +
+			"<td align=\"center\"> %s </td>" +
 			"</tr>"+
 			"<tr>"+ "<td> &nbsp; </td>" + "</tr>"+
 			"<tr>"+ "<td> &nbsp; </td>" + "</tr>"+
@@ -89,21 +90,60 @@ public class PhotoGalleryServlet extends HttpServlet {
 
 		  conn = DriverManager.getConnection(DB_URL);
 		  stmt = conn.createStatement();
-		  String query =  "SELECT path, caption, date, latitude, longitude FROM photodata;";
+		  String query =  String.format("SELECT path, caption, date, latitude, longitude FROM photodata WHERE UID = (SELECT UID FROM users WHERE Username = \"%s\")", user);
+
+		  String longitude = new String();
+		  String latitude = new String();
+		  String distance = new String();
 
 		  if (parameterNames.hasMoreElements()) {
-			query += "";
+			  while (parameterNames.hasMoreElements()) {
+
+				  String paramName = parameterNames.nextElement();
+				  String paramValue = request.getParameter(paramName);
+
+				  switch (paramName) {
+					  case "caption":
+						  if (paramValue.length() > 0) {
+							  query += String.format("AND caption LIKE \"%%%s%%\"", paramValue);
+						  }
+						  break;
+					  case "from_date":
+						  String toDate = request.getParameter("to_date");
+						  if (toDate.length() > 0 && paramValue.length() > 0) {
+							  query += String.format("AND date BETWEEN \"%s\" AND \"%s\"", paramValue, toDate);
+						  }
+						  break;
+					  default:
+						  break;
+				  }
+			  }
+
+			  longitude = request.getParameter("longitude");
+			  latitude = request.getParameter("latitude");
+			  distance = request.getParameter("distance");
 		  }
+		  query += ";";
 
 		  ResultSet rs = stmt.executeQuery(query);
 
 		  while(rs.next()) {
-		  		Photo p = new Photo(rs.getString("path"),
-						            rs.getString("caption"),
-						            String.valueOf(rs.getFloat("latitude")),
-						            String.valueOf(rs.getFloat("longitude")),
-						            rs.getString("date"));
-				photoList.add(p);
+
+			  double _latitude = Double.valueOf(rs.getString("latitude"));
+			  double _longitude = Double.valueOf(rs.getString("longitude"));
+
+			  if (longitude.length() > 0 && latitude.length() > 0 && distance.length() > 0) {
+			  		if (getDistance(Double.valueOf(latitude), Double.valueOf(longitude), _latitude, _longitude, 0.0, 0.0) > Double.valueOf(distance)) {
+			  			continue;
+			  		}
+			  }
+
+			  Photo p = new Photo(rs.getString("path"),
+									rs.getString("caption"),
+									String.valueOf(rs.getString("latitude")),
+									String.valueOf(rs.getString("longitude")),
+									rs.getString("date"));
+			  photoList.add(p);
 		  }
 	  }
 	  catch (SQLException se) {
@@ -119,7 +159,7 @@ public class PhotoGalleryServlet extends HttpServlet {
 		  } catch (Exception e) {e.printStackTrace();}
 	  }
 
-	  if (photoListIterator.hasNext()) {
+	  if (photoListIterator.hasNext()) { //hmmm
 	  	photo = photoListIterator.next();
 	  }
 	  else {
@@ -129,7 +169,7 @@ public class PhotoGalleryServlet extends HttpServlet {
 	  PrintWriter out = response.getWriter();
 	  
 	  title = "Photo Gallery - " + user;
-	  out.println(String.format(page, title, title, photo.path, photo.caption));
+	  out.println(String.format(page, title, title, photo.date, photo.latitude, photo.longitude, photo.path, photo.caption));
 
 	  //out.print(photo_index); // just to show that left/right buttons work. Remove when unneeded
    }
@@ -149,7 +189,7 @@ public class PhotoGalleryServlet extends HttpServlet {
 		  if (photoListIterator.hasPrevious()) {
 			  photo = photoListIterator.previous();
 		  }
-		  out.println(String.format(page, title, title, photo.path, photo.caption));
+		  out.println(String.format(page, title, title, photo.date, photo.latitude, photo.longitude, photo.path, photo.caption));
 	  }
 	  else if (button.equals("Right")) {
 		  response.setContentType("text/html");
@@ -158,7 +198,7 @@ public class PhotoGalleryServlet extends HttpServlet {
 	  	  if (photoListIterator.hasNext()) {
 			  photo = photoListIterator.next();
 		  }
-		  out.println(String.format(page, title, title, photo.path, photo.caption));
+		  out.println(String.format(page, title, title, photo.date, photo.latitude, photo.longitude, photo.path, photo.caption));
 	  }
 	  else if (button.equals("Upload")) {
 		  photo_index = 600;
@@ -166,6 +206,26 @@ public class PhotoGalleryServlet extends HttpServlet {
 		  //doGet(request, response);
 	  } 
    }
+
+	public static double getDistance(double lat1, double lat2, double lon1,
+								  double lon2, double el1, double el2) {
+
+		final int R = 6371; // Radius of the earth
+
+		double latDistance = Math.toRadians(lat2 - lat1);
+		double lonDistance = Math.toRadians(lon2 - lon1);
+		double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
+				+ Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2))
+				* Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
+		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		double distance = R * c * 1000; // convert to meters
+
+		double height = el1 - el2;
+
+		distance = Math.pow(distance, 2) + Math.pow(height, 2);
+
+		return Math.sqrt(distance);
+	}
 
    public class Photo {
 		public String path;

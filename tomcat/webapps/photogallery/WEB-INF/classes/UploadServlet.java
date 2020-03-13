@@ -96,9 +96,8 @@ public class UploadServlet extends HttpServlet {
 		   File f = new File(filePathTemp + fileName);
 		   java.nio.file.Files.copy(fileContent, f.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 
-		   SimpleDateFormat sdf_caption = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-		   SimpleDateFormat sdf_db = new SimpleDateFormat("yyyyMMdd_HHmmss");
-		   fileDate = sdf_db.format(f.lastModified());
+		   SimpleDateFormat sdf_caption = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		   fileDate = sdf_caption.format(f.lastModified());
 
 		   String title = "Upload Files";
 		   String docType =
@@ -113,7 +112,7 @@ public class UploadServlet extends HttpServlet {
 						   "<form id=\"data\"action= \"UploadPage\" method=\"POST\" enctype=\"multipart/form-data\">" +
 						   "<table align = \"center\">" +
 						   "<tr>" + String.format("<td> <img src=\"data\\temp\\%s \" style=\"max-width:800px;max-height:600px\"/> </td>", fileName) + "</tr>" +
-				           "<tr>"+ "<td align=\"center\">" + fileName + " - " + sdf_caption.format(f.lastModified()) + "</td>" + "</tr>" +
+				           "<tr>"+ "<td align=\"center\">" + fileName + " - " + fileDate + "</td>" + "</tr>" +
 				           "<tr>"+ "<td> &nbsp; </td>" + "</tr>"+
 				           "<tr>"+ "<td> &nbsp; </td>" + "</tr>"+
 						   "<tr>"+ "<td align=\"left\">" + "<label for=\"caption\">Caption:  </label>" + "<input type=\"text\" id=\"caption\" name=\"caption\" />" + "</td>"+ "</tr>"+
@@ -134,8 +133,8 @@ public class UploadServlet extends HttpServlet {
 		   Statement stmt = null;
 
 		   String caption = request.getParameter("caption");
-	   	   float latitude = Float.parseFloat(request.getParameter("latitude"));
-	   	   float longitude = Float.parseFloat(request.getParameter("longitude"));
+	   	   String latitude = request.getParameter("latitude");
+	   	   String longitude = request.getParameter("longitude");
 
 		   try {
 			   //Class.forName("org.sqlite.JDBC");
@@ -143,7 +142,7 @@ public class UploadServlet extends HttpServlet {
 			   stmt = conn.createStatement();
 
 			   String sql =  "INSERT INTO photodata (path, caption, latitude, longitude, date, UID) VALUES " +
-					   String.format("(\"%s\", \"%s\", %f, %f, \"%s\", (SELECT UID FROM users WHERE Username = \"%s\"));",
+					   String.format("(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", (SELECT UID FROM users WHERE Username = \"%s\"));",
 							   fileName,
 							   caption,
 							   latitude,
