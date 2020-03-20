@@ -40,4 +40,15 @@
 		<servlet-name>UploadPage</servlet-name>
 		<url-pattern>/UploadPage</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ExternalUploadServlet</servlet-name>
+		<servlet-class>ExternalUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExternalUploadServlet</servlet-name>
+		<url-pattern>/ext_upload</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>

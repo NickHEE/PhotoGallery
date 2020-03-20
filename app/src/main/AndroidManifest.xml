@@ -25,6 +25,7 @@
             android:value="@integer/google_play_services_version"/>
 
         <activity android:name="com.example.photoGallery.FilterActivity"></activity>
+        <activity android:name="com.example.photoGallery.TomcatActivity"></activity>
         <activity android:name="com.example.photoGallery.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

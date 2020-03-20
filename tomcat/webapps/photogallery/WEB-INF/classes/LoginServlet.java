@@ -9,8 +9,9 @@ import java.util.concurrent.TimeUnit;
 // Extend HttpServlet class
 public class LoginServlet extends HttpServlet {
 
-	static final String DB_URL = "jdbc:sqlite:F:\\COMP_Project\\PhotoGallery\\tomcat\\webapps\\photogallery\\WEB-INF\\classes\\PhotoGallery.db";
-  
+	//static final String DB_URL = "jdbc:sqlite:F:\\COMP_Project\\PhotoGallery\\tomcat\\webapps\\photogallery\\WEB-INF\\classes\\PhotoGallery.db";
+    static final String DB_URL = "jdbc:sqlite:"+System.getProperty("catalina.base") + "\\webapps\\photogallery\\WEB-INF\\classes\\PhotoGallery.db";
+	
 	static final String USERNAME = "root";
 	static final String PASS = "ilovebobgill69";
 

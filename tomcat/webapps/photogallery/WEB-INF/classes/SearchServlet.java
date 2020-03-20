@@ -7,10 +7,18 @@ import javax.servlet.http.*;
 public class SearchServlet extends HttpServlet {
    // Method to handle GET method request.
    public void doGet(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
-		  
-      // Set response content type
-      response.setContentType("text/html");
+	throws ServletException, IOException {
+	  
+	// Set response content type
+	response.setContentType("text/html");
+
+	HttpSession session = request.getSession(false);
+	if (session == null) {
+		response.sendRedirect("/photogallery/");
+	}
+	  
+	  
+	  
 	  PrintWriter out = response.getWriter();
 	  
 	  String title = "Photo-Gallery Search Filter";

@@ -125,11 +125,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="139dp"
-        android:layout_marginEnd="139dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="216dp"
         android:layout_marginBottom="91dp"
         android:onClick="uploadPicture"
-        android:text="Upload" />
+        android:text="Social Media" />
+
+    <Button
+        android:id="@+id/btn_upload_tomcat"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="220dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="91dp"
+        android:onClick="tomcat"
+        android:text="Tomcat" />
 
 
 </RelativeLayout>

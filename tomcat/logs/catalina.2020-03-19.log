@@ -1,0 +1,743 @@
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:32:02.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 06:32:02.695 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 06:32:02.695 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 06:32:02.695 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 06:32:02.696 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 06:32:03.222 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 06:32:03.445 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 06:32:03.450 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,015] milliseconds
+19-Mar-2020 06:32:03.488 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 06:32:03.488 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 06:32:03.500 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 06:32:04.656 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:32:04.706 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,206] ms
+19-Mar-2020 06:32:04.706 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 06:32:05.852 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:32:05.928 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,222] ms
+19-Mar-2020 06:32:05.928 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 06:32:06.827 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:32:06.845 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [917] ms
+19-Mar-2020 06:32:06.846 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 06:32:07.914 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:32:07.921 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [1,074] ms
+19-Mar-2020 06:32:07.923 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 06:32:08.724 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:32:08.729 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [807] ms
+19-Mar-2020 06:32:08.730 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 06:32:09.462 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:32:09.472 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [742] ms
+19-Mar-2020 06:32:09.474 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 06:32:10.120 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:32:10.126 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [652] ms
+19-Mar-2020 06:32:10.133 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 06:32:10.149 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 06:32:10.155 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6,703] milliseconds
+19-Mar-2020 06:36:23.530 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 06:36:23.532 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 06:36:23.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 06:36:23.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 06:36:23.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 06:36:23.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 06:36:23.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 06:36:23.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 06:36:23.534 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 06:36:23.534 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:36:23.534 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:36:23.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 06:36:23.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 06:36:23.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 06:36:23.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 06:36:23.536 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 06:36:23.536 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:36:23.537 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:36:23.537 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 06:36:23.543 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 06:36:23.543 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 06:36:23.546 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 06:36:23.551 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 06:36:24.022 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 06:36:24.261 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 06:36:24.266 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,027] milliseconds
+19-Mar-2020 06:36:24.337 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 06:36:24.344 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 06:36:24.363 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 06:36:25.605 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:36:25.659 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,295] ms
+19-Mar-2020 06:36:25.659 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 06:36:26.806 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:36:26.972 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,313] ms
+19-Mar-2020 06:36:26.973 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 06:36:27.937 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:36:27.944 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [971] ms
+19-Mar-2020 06:36:27.945 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 06:36:28.753 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:36:28.759 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [814] ms
+19-Mar-2020 06:36:28.760 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 06:36:29.550 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:36:29.557 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [797] ms
+19-Mar-2020 06:36:29.558 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 06:36:30.389 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:36:30.414 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [857] ms
+19-Mar-2020 06:36:30.417 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 06:36:31.063 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:36:31.068 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [651] ms
+19-Mar-2020 06:36:31.072 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 06:36:31.084 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 06:36:31.087 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6,819] milliseconds
+19-Mar-2020 06:45:10.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 06:45:10.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 06:45:10.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 06:45:10.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 06:45:10.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 06:45:10.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 06:45:10.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 06:45:10.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 06:45:10.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 06:45:10.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:45:10.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:45:10.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 06:45:10.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 06:45:10.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 06:45:10.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 06:45:10.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 06:45:10.025 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:45:10.025 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 06:45:10.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 06:45:10.032 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 06:45:10.035 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 06:45:10.038 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 06:45:10.053 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 06:45:10.557 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 06:45:10.830 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 06:45:10.835 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,054] milliseconds
+19-Mar-2020 06:45:10.870 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 06:45:10.870 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 06:45:10.882 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 06:45:11.979 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:45:12.030 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,148] ms
+19-Mar-2020 06:45:12.032 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 06:45:13.104 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:45:13.271 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,239] ms
+19-Mar-2020 06:45:13.271 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 06:45:14.117 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:45:14.128 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [857] ms
+19-Mar-2020 06:45:14.129 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 06:45:14.967 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:45:14.973 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [843] ms
+19-Mar-2020 06:45:14.974 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 06:45:15.744 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:45:15.757 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [784] ms
+19-Mar-2020 06:45:15.758 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 06:45:16.582 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:45:16.592 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [834] ms
+19-Mar-2020 06:45:16.598 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 06:45:17.351 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 06:45:17.355 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [757] ms
+19-Mar-2020 06:45:17.359 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 06:45:17.368 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 06:45:17.371 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6,534] milliseconds
+19-Mar-2020 07:54:22.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 07:54:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 07:54:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 07:54:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 07:54:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 07:54:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 07:54:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 07:54:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 07:54:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 07:54:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 07:54:22.043 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 07:54:22.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 07:54:22.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 07:54:22.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 07:54:22.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 07:54:22.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 07:54:22.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 07:54:22.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 07:54:22.046 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 07:54:22.047 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 07:54:22.047 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 07:54:22.048 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 07:54:22.057 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 07:54:22.459 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 07:54:22.681 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 07:54:22.685 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [898] milliseconds
+19-Mar-2020 07:54:22.720 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 07:54:22.721 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 07:54:22.733 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 07:54:23.864 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 07:54:23.916 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,182] ms
+19-Mar-2020 07:54:23.916 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 07:54:24.987 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 07:54:25.063 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,147] ms
+19-Mar-2020 07:54:25.064 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 07:54:25.990 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 07:54:25.998 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [935] ms
+19-Mar-2020 07:54:25.998 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 07:54:26.793 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 07:54:26.801 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [802] ms
+19-Mar-2020 07:54:26.802 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 07:54:27.536 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 07:54:27.543 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [741] ms
+19-Mar-2020 07:54:27.543 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 07:54:28.154 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 07:54:28.162 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [618] ms
+19-Mar-2020 07:54:28.167 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 07:54:28.793 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 07:54:28.796 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [630] ms
+19-Mar-2020 07:54:28.801 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 07:54:28.812 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 07:54:28.816 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6,130] milliseconds
+19-Mar-2020 08:12:04.121 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 08:12:04.122 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 08:12:04.122 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 08:12:04.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 08:12:04.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 08:12:04.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 08:12:04.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 08:12:04.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 08:12:04.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 08:12:04.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 08:12:04.124 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 08:12:04.124 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 08:12:04.125 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 08:12:04.125 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 08:12:04.125 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 08:12:04.125 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 08:12:04.125 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 08:12:04.126 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 08:12:04.127 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 08:12:04.127 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 08:12:04.128 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 08:12:04.129 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 08:12:04.138 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 08:12:04.541 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 08:12:04.800 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 08:12:04.809 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [926] milliseconds
+19-Mar-2020 08:12:04.842 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 08:12:04.843 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 08:12:04.855 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 08:12:05.891 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:12:05.941 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,086] ms
+19-Mar-2020 08:12:05.942 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 08:12:06.894 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:12:06.961 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,019] ms
+19-Mar-2020 08:12:06.962 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 08:12:07.701 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:12:07.708 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [745] ms
+19-Mar-2020 08:12:07.708 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 08:12:08.386 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:12:08.386 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [678] ms
+19-Mar-2020 08:12:08.386 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 08:12:09.084 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:12:09.090 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [704] ms
+19-Mar-2020 08:12:09.090 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 08:12:10.001 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:12:10.007 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [917] ms
+19-Mar-2020 08:12:10.009 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 08:12:10.546 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:12:10.561 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [552] ms
+19-Mar-2020 08:12:10.561 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 08:12:10.577 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 08:12:10.577 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5,770] milliseconds
+19-Mar-2020 08:22:11.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 08:22:11.424 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 08:22:11.425 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 08:22:11.425 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 08:22:11.425 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 08:22:11.425 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 08:22:11.425 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 08:22:11.426 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 08:22:11.426 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 08:22:11.426 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 08:22:11.426 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 08:22:11.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 08:22:11.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 08:22:11.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 08:22:11.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 08:22:11.428 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 08:22:11.428 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 08:22:11.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 08:22:11.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 08:22:11.430 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 08:22:11.430 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 08:22:11.431 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 08:22:11.437 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 08:22:11.895 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 08:22:12.138 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 08:22:12.143 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [971] milliseconds
+19-Mar-2020 08:22:12.185 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 08:22:12.186 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 08:22:12.199 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 08:22:13.280 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:22:13.328 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,129] ms
+19-Mar-2020 08:22:13.328 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 08:22:14.421 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:22:14.490 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,162] ms
+19-Mar-2020 08:22:14.491 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 08:22:15.241 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:22:15.250 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [759] ms
+19-Mar-2020 08:22:15.251 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 08:22:15.948 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:22:15.959 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [708] ms
+19-Mar-2020 08:22:15.961 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 08:22:16.678 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:22:16.685 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [724] ms
+19-Mar-2020 08:22:16.686 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 08:22:17.339 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:22:17.346 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [660] ms
+19-Mar-2020 08:22:17.347 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 08:22:17.920 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 08:22:17.925 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [578] ms
+19-Mar-2020 08:22:17.930 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 08:22:17.940 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 08:22:17.945 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5,799] milliseconds
+19-Mar-2020 12:45:19.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 12:45:19.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 12:45:19.985 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 12:45:19.985 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 12:45:19.985 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 12:45:19.995 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 12:45:20.930 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 12:45:21.165 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 12:45:21.165 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,471] milliseconds
+19-Mar-2020 12:45:21.205 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 12:45:21.205 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 12:45:21.215 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 12:45:22.355 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 12:45:22.410 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,195] ms
+19-Mar-2020 12:45:22.410 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 12:45:23.430 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 12:45:23.495 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,085] ms
+19-Mar-2020 12:45:23.495 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 12:45:24.360 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 12:45:24.370 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [875] ms
+19-Mar-2020 12:45:24.370 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 12:45:25.065 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 12:45:25.068 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [698] ms
+19-Mar-2020 12:45:25.071 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 12:45:26.015 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 12:45:26.023 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [955] ms
+19-Mar-2020 12:45:26.023 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 12:45:27.079 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 12:45:27.086 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [1,062] ms
+19-Mar-2020 12:45:27.089 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 12:45:28.097 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 12:45:28.101 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [1,012] ms
+19-Mar-2020 12:45:28.112 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 12:45:28.123 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 12:45:28.126 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6,953] milliseconds
+19-Mar-2020 13:08:32.110 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 13:08:32.113 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 13:08:32.113 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 13:08:32.113 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 13:08:32.114 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 13:08:32.114 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 13:08:32.114 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 13:08:32.114 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 13:08:32.115 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 13:08:32.115 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 13:08:32.115 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 13:08:32.116 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 13:08:32.116 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 13:08:32.116 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 13:08:32.117 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 13:08:32.117 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 13:08:32.117 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 13:08:32.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 13:08:32.119 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 13:08:32.125 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 13:08:32.126 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 13:08:32.129 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 13:08:32.135 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 13:08:32.658 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 13:08:32.901 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 13:08:32.906 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,145] milliseconds
+19-Mar-2020 13:08:32.946 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 13:08:32.948 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 13:08:32.963 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 13:08:34.297 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 13:08:34.360 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,397] ms
+19-Mar-2020 13:08:34.360 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 13:08:35.711 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 13:08:35.787 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,427] ms
+19-Mar-2020 13:08:35.788 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 13:08:36.758 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 13:08:36.768 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [980] ms
+19-Mar-2020 13:08:36.769 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 13:08:37.893 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 13:08:37.898 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [1,129] ms
+19-Mar-2020 13:08:37.899 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 13:08:38.846 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 13:08:38.855 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [956] ms
+19-Mar-2020 13:08:38.856 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 13:08:39.681 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 13:08:39.690 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [835] ms
+19-Mar-2020 13:08:39.692 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 13:08:40.417 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 13:08:40.423 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [732] ms
+19-Mar-2020 13:08:40.430 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 13:08:40.443 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 13:08:40.445 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7,538] milliseconds
+19-Mar-2020 14:43:36.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 14:43:36.393 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 14:43:36.394 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 14:43:36.394 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 14:43:36.394 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 14:43:36.394 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 14:43:36.394 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 14:43:36.394 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 14:43:36.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 14:43:36.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 14:43:36.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 14:43:36.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 14:43:36.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 14:43:36.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 14:43:36.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 14:43:36.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 14:43:36.396 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 14:43:36.396 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 14:43:36.397 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 14:43:36.403 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 14:43:36.404 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 14:43:36.407 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 14:43:36.412 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 14:43:36.834 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 14:43:37.081 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 14:43:37.089 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [936] milliseconds
+19-Mar-2020 14:43:37.138 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 14:43:37.138 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 14:43:37.149 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 14:43:38.262 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 14:43:38.319 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,170] ms
+19-Mar-2020 14:43:38.319 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 14:43:40.076 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 14:43:40.638 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [2,319] ms
+19-Mar-2020 14:43:40.716 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 14:43:41.931 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 14:43:41.938 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [1,221] ms
+19-Mar-2020 14:43:41.938 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 14:43:42.579 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 14:43:42.584 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [646] ms
+19-Mar-2020 14:43:42.585 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 14:43:43.270 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 14:43:43.278 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [693] ms
+19-Mar-2020 14:43:43.279 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 14:43:44.033 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 14:43:44.039 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [759] ms
+19-Mar-2020 14:43:44.040 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 14:43:44.595 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 14:43:44.598 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [558] ms
+19-Mar-2020 14:43:44.603 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 14:43:44.613 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 14:43:44.616 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7,526] milliseconds
+19-Mar-2020 15:08:54.240 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 15:08:54.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 15:08:54.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 15:08:54.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 15:08:54.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 15:08:54.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 15:08:54.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 15:08:54.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 15:08:54.244 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 15:08:54.244 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 15:08:54.244 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 15:08:54.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 15:08:54.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 15:08:54.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 15:08:54.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 15:08:54.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 15:08:54.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 15:08:54.246 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 15:08:54.247 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 15:08:54.252 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 15:08:54.255 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 15:08:54.257 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 15:08:54.262 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 15:08:54.662 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 15:08:54.900 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 15:08:54.906 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [919] milliseconds
+19-Mar-2020 15:08:54.945 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 15:08:54.948 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 15:08:54.965 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 15:08:55.977 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 15:08:56.023 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,058] ms
+19-Mar-2020 15:08:56.024 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 15:08:57.038 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 15:08:57.114 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,090] ms
+19-Mar-2020 15:08:57.115 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 15:08:57.914 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 15:08:57.922 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [808] ms
+19-Mar-2020 15:08:57.923 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 15:08:58.865 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 15:08:58.870 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [947] ms
+19-Mar-2020 15:08:58.871 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 15:08:59.638 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 15:08:59.645 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [774] ms
+19-Mar-2020 15:08:59.646 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 15:09:00.684 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 15:09:00.691 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [1,044] ms
+19-Mar-2020 15:09:00.698 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 15:09:01.729 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 15:09:01.743 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [1,045] ms
+19-Mar-2020 15:09:01.756 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 15:09:01.775 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 15:09:01.783 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6,876] milliseconds
+19-Mar-2020 17:27:43.991 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Reloading context [/photogallery]
+19-Mar-2020 17:27:43.994 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/photogallery] has started
+19-Mar-2020 17:27:45.310 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:27:45.315 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/photogallery] is completed
+19-Mar-2020 17:30:02.816 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 17:30:02.818 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 17:30:02.818 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 17:30:02.818 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 17:30:02.818 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 17:30:02.819 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 17:30:02.819 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 17:30:02.819 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 17:30:02.819 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 17:30:02.819 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:30:02.820 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:30:02.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 17:30:02.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 17:30:02.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 17:30:02.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 17:30:02.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 17:30:02.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:30:02.822 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:30:02.823 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 17:30:02.824 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 17:30:02.824 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 17:30:02.825 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 17:30:02.834 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 17:30:03.331 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 17:30:03.587 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 17:30:03.592 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,033] milliseconds
+19-Mar-2020 17:30:03.634 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 17:30:03.636 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 17:30:03.650 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 17:30:04.894 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:30:04.943 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,293] ms
+19-Mar-2020 17:30:04.944 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 17:30:06.162 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:30:06.242 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,299] ms
+19-Mar-2020 17:30:06.243 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 17:30:07.206 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:30:07.216 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [972] ms
+19-Mar-2020 17:30:07.216 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 17:30:08.066 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:30:08.071 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [855] ms
+19-Mar-2020 17:30:08.072 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 17:30:08.773 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:30:08.780 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [708] ms
+19-Mar-2020 17:30:08.780 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 17:30:08.831 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDirectory Error deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1133)
+		at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1867)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+		at java.util.concurrent.FutureTask.run(Unknown Source)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+		at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1045)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(Unknown Source)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+		at java.lang.reflect.Method.invoke(Unknown Source)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/photogallery]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The servlets named [ExternalUploadPage] and [ExternalUploadServlet] are both mapped to the url-pattern [/ext_upload] which is not permitted
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMappingDecoded(WebXml.java:342)
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMapping(WebXml.java:335)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationWebServlet(ContextConfig.java:2460)
+		at org.apache.catalina.startup.ContextConfig.processClass(ContextConfig.java:2136)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:2125)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:2017)
+		at org.apache.catalina.startup.ContextConfig.processClasses(ContextConfig.java:1234)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1143)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:775)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:301)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5051)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 38 more
+19-Mar-2020 17:30:08.834 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [54] ms
+19-Mar-2020 17:30:08.839 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 17:30:09.627 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:30:09.633 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [794] ms
+19-Mar-2020 17:30:09.639 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 17:30:09.653 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 17:30:09.659 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6,065] milliseconds
+19-Mar-2020 17:34:34.657 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 17:34:34.659 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 17:34:34.660 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 17:34:34.660 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 17:34:34.660 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 17:34:34.660 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 17:34:34.661 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 17:34:34.661 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 17:34:34.661 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 17:34:34.662 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:34:34.662 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:34:34.663 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 17:34:34.664 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 17:34:34.664 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 17:34:34.664 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 17:34:34.664 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 17:34:34.665 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:34:34.666 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:34:34.666 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 17:34:34.667 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 17:34:34.667 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 17:34:34.668 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 17:34:34.676 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 17:34:35.168 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 17:34:35.423 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 17:34:35.428 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,031] milliseconds
+19-Mar-2020 17:34:35.472 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 17:34:35.474 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 17:34:35.488 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 17:34:36.637 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:34:36.702 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,214] ms
+19-Mar-2020 17:34:36.704 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 17:34:37.789 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:34:37.897 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,193] ms
+19-Mar-2020 17:34:37.898 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 17:34:38.687 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:34:38.699 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [802] ms
+19-Mar-2020 17:34:38.700 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 17:34:39.449 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:34:39.454 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [754] ms
+19-Mar-2020 17:34:39.455 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 17:34:40.031 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:34:40.037 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [582] ms
+19-Mar-2020 17:34:40.039 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 17:34:40.691 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:34:40.698 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [659] ms
+19-Mar-2020 17:34:40.699 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 17:34:41.276 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:34:41.279 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [580] ms
+19-Mar-2020 17:34:41.284 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 17:34:41.293 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 17:34:41.296 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5,866] milliseconds
+19-Mar-2020 17:35:31.379 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Reloading context [/photogallery]
+19-Mar-2020 17:35:31.380 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/photogallery] has started
+19-Mar-2020 17:35:32.064 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:35:32.068 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/photogallery] is completed
+19-Mar-2020 17:35:51.743 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.24
+19-Mar-2020 17:35:51.745 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 14 2019 21:16:42 UTC
+19-Mar-2020 17:35:51.746 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.24.0
+19-Mar-2020 17:35:51.746 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+19-Mar-2020 17:35:51.746 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+19-Mar-2020 17:35:51.746 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+19-Mar-2020 17:35:51.746 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_241
+19-Mar-2020 17:35:51.746 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+19-Mar-2020 17:35:51.747 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+19-Mar-2020 17:35:51.747 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:35:51.747 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:35:51.748 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\conf\logging.properties
+19-Mar-2020 17:35:51.748 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+19-Mar-2020 17:35:51.748 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+19-Mar-2020 17:35:51.748 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+19-Mar-2020 17:35:51.748 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+19-Mar-2020 17:35:51.748 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:35:51.750 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat
+19-Mar-2020 17:35:51.750 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\temp
+19-Mar-2020 17:35:51.751 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+19-Mar-2020 17:35:51.751 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+19-Mar-2020 17:35:51.752 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+19-Mar-2020 17:35:51.757 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+19-Mar-2020 17:35:52.210 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 17:35:52.437 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 17:35:52.444 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [947] milliseconds
+19-Mar-2020 17:35:52.477 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+19-Mar-2020 17:35:52.477 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.24]
+19-Mar-2020 17:35:52.494 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs]
+19-Mar-2020 17:35:53.514 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:35:53.560 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\docs] has finished in [1,067] ms
+19-Mar-2020 17:35:53.560 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples]
+19-Mar-2020 17:35:54.623 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:35:54.694 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\examples] has finished in [1,133] ms
+19-Mar-2020 17:35:54.694 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager]
+19-Mar-2020 17:35:55.427 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:35:55.436 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\host-manager] has finished in [741] ms
+19-Mar-2020 17:35:55.436 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager]
+19-Mar-2020 17:35:56.142 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:35:56.146 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\manager] has finished in [710] ms
+19-Mar-2020 17:35:56.147 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp]
+19-Mar-2020 17:35:56.940 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:35:56.948 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\midp] has finished in [800] ms
+19-Mar-2020 17:35:56.951 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery]
+19-Mar-2020 17:35:57.664 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:35:57.671 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\photogallery] has finished in [723] ms
+19-Mar-2020 17:35:57.673 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT]
+19-Mar-2020 17:35:58.424 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+19-Mar-2020 17:35:58.428 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Joseph\AndroidStudioProjects\turbo_jank\PhotoGallery\tomcat\webapps\ROOT] has finished in [755] ms
+19-Mar-2020 17:35:58.434 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+19-Mar-2020 17:35:58.446 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+19-Mar-2020 17:35:58.452 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6,007] milliseconds

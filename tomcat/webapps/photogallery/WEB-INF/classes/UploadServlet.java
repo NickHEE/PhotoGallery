@@ -36,6 +36,17 @@ public class UploadServlet extends HttpServlet {
 		//DB_URL = "jdbc:sqlite:F:\\COMP_Project\\PhotoGallery\\tomcat\\webapps\\photogallery\\WEB-INF\\classes\\PhotoGallery.db";
 	}
 
+	private static String getSubmittedFileName(Part part) {
+		for (String cd : part.getHeader("content-disposition").split(";")) {
+			if (cd.trim().startsWith("filename")) {
+				String fileName = cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
+				return fileName.substring(fileName.lastIndexOf('/') + 1).substring(fileName.lastIndexOf('\\') + 1); // MSIE fix.
+			}
+		}
+		return null;
+	}
+
+
    // Method to handle GET method request.
    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  
@@ -43,13 +54,13 @@ public class UploadServlet extends HttpServlet {
 		response.setContentType("text/html");
 
 		HttpSession session = request.getSession(false);
-		user = (String) session.getAttribute("user");
+		
 
 		if (session == null) {
 			response.sendRedirect("/photogallery/");
 		}
 		else {
-
+			user = (String) session.getAttribute("user");
 			PrintWriter out = response.getWriter();
 
 			String title = "Upload Files";
@@ -90,7 +101,7 @@ public class UploadServlet extends HttpServlet {
 
 	   if (filePart != null) {
 
-		   fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+		   fileName = getSubmittedFileName(filePart);
 		   InputStream fileContent = filePart.getInputStream();
 
 		   File f = new File(filePathTemp + fileName);
