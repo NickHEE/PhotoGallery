@@ -33,7 +33,6 @@ public class UploadServlet extends HttpServlet {
 		filePath = System.getProperty("catalina.base") + "/webapps/photogallery/data/";
 		filePathTemp = filePath + "temp/";
 		DB_URL = "jdbc:sqlite:"+System.getProperty("catalina.base") + "\\webapps\\photogallery\\WEB-INF\\classes\\PhotoGallery.db";
-		//DB_URL = "jdbc:sqlite:F:\\COMP_Project\\PhotoGallery\\tomcat\\webapps\\photogallery\\WEB-INF\\classes\\PhotoGallery.db";
 	}
 
 	private static String getSubmittedFileName(Part part) {
@@ -75,14 +74,10 @@ public class UploadServlet extends HttpServlet {
 					"<br><br>" +
 					"<form action= \"UploadPage\" method=\"POST\" enctype=\"multipart/form-data\">" +
 					"<table align = \"center\">" +
+					"<tr><td> Choose file to upload </tr></td>"+
+					"<tr><td> <input type=\"file\" id=\"file\" name=\"file\" /> </tr></td>"+
 					"<tr>"+
-					"<td>"+
-					"<label for=\"file\">Choose file to upload </label>" +
-					"<input type=\"file\" id=\"file\" name=\"file\" />" +
-					"</td>"+
-					"</tr>"+
-					"<tr>"+
-					"<td><button>Submit</button></td>" +
+					"<td><button>Upload</button></td>" +
 					"</tr>"+
 					"</table>" +
 					"</form>"+

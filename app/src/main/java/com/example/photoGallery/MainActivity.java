@@ -18,47 +18,32 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.util.Log;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 
-import com.example.photoGallery.midterm.asyncTaskExample;
 import com.example.photoGallery.utility.Utility;
 import com.example.photoGallery.utility.Photo;
 
 
-
-
-
-//Http://10.0.2.2:8081/midp/hits
 public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -69,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Photo> photoList;
     private String photoPath = null;
     private File dataFile;
-    private Photo currentPhoto; //TODO: Get rid of this?
+    private Photo currentPhoto;
     private Location currentLocation;
 
     private ImageView imgV;
@@ -80,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
     private final String namePackage = "com.discord";
 
-
-    private String Tag = "UPLOADER";
     private String urlString = "http://10.0.2.2:8081/photogallery/ext_upload";
     private HttpURLConnection conn;
     private String lineEnd = "\r\n";
@@ -182,8 +165,6 @@ public class MainActivity extends AppCompatActivity {
         } catch(SecurityException ex) {Log.d("onCreate", ex.toString());}
 
 
-
-
     }
     private class DownloadWebPageTask extends AsyncTask<String, Void, String> {
         @Override
@@ -195,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
             params.put("latitude", Double.toString(currentPhoto.getLocation().getLatitude()));
             params.put("Username", user_name);
             params.put("Password", password);
-            message_from_tomcat = multipartRequest(urlString, params, currentPhoto.getPath(), "image", "image/jpg");
+            message_from_tomcat = Utility.multipartRequest(urlString, params, currentPhoto.getPath(), "image", "image/jpg");
 
             runOnUiThread (new Thread(new Runnable() {
                 public void run() {
@@ -286,7 +267,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void populateGallery(Date minDate, Date maxDate, Location location, Double distance, String caption) {
-        //TODO: handle location
 
         Collection<Photo> photos = Utility.readDataFile(dataFile);
 
@@ -329,7 +309,6 @@ public class MainActivity extends AppCompatActivity {
             currentPhoto = photoList.get(photoIdx);
             displayPhoto(currentPhoto);
 
-            new asyncTaskExample(MainActivity.this).execute(photoIdx, photoIdx + 1, photoIdx + 2);
         }
     }
 
@@ -420,180 +399,6 @@ public class MainActivity extends AppCompatActivity {
             task.execute(new String[] { "www.yahoo.com" });
         }
     }
-
-
-
-    public String multipartRequest(String urlTo, Map<String, String> parmas, String filepath, String filefield, String fileMimeType) {
-        HttpURLConnection connection = null;
-        DataOutputStream outputStream = null;
-        InputStream inputStream = null;
-
-        String twoHyphens = "--";
-        String boundary = "*****" + Long.toString(System.currentTimeMillis()) + "*****";
-        String lineEnd = "\r\n";
-
-        String result = "";
-
-        int bytesRead, bytesAvailable, bufferSize;
-        byte[] buffer;
-        int maxBufferSize = 1 * 1024 * 1024;
-
-        String[] q = filepath.split("/");
-        int idx = q.length - 1;
-
-        try {
-            File file = new File(filepath);
-            FileInputStream fileInputStream = new FileInputStream(file);
-
-            URL url = new URL(urlTo);
-            connection = (HttpURLConnection) url.openConnection();
-
-            connection.setDoInput(true);
-            connection.setDoOutput(true);
-            connection.setUseCaches(false);
-
-            connection.setRequestMethod("POST");
-            connection.setRequestProperty("Connection", "Keep-Alive");
-            connection.setRequestProperty("User-Agent", "Android Multipart HTTP Client 1.0");
-            connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
-
-            outputStream = new DataOutputStream(connection.getOutputStream());
-
-            outputStream.writeBytes(twoHyphens + boundary + lineEnd);
-            outputStream.writeBytes("Content-Disposition: form-data; name=\"" + filefield + "\"; filename=\"" + q[idx] + "\"" + lineEnd);
-            outputStream.writeBytes("Content-Type: " + fileMimeType + lineEnd);
-            outputStream.writeBytes("Content-Transfer-Encoding: binary" + lineEnd);
-
-            outputStream.writeBytes(lineEnd);
-
-            bytesAvailable = fileInputStream.available();
-            bufferSize = Math.min(bytesAvailable, maxBufferSize);
-            buffer = new byte[bufferSize];
-
-            bytesRead = fileInputStream.read(buffer, 0, bufferSize);
-            while (bytesRead > 0) {
-                outputStream.write(buffer, 0, bufferSize);
-                bytesAvailable = fileInputStream.available();
-                bufferSize = Math.min(bytesAvailable, maxBufferSize);
-                bytesRead = fileInputStream.read(buffer, 0, bufferSize);
-            }
-
-            outputStream.writeBytes(lineEnd);
-
-            // Upload POST Data
-            Iterator<String> keys = parmas.keySet().iterator();
-            while (keys.hasNext()) {
-                String key = keys.next();
-                String value = parmas.get(key);
-
-                outputStream.writeBytes(twoHyphens + boundary + lineEnd);
-                outputStream.writeBytes("Content-Disposition: form-data; name=\"" + key + "\"" + lineEnd);
-                outputStream.writeBytes("Content-Type: text/plain" + lineEnd);
-                outputStream.writeBytes(lineEnd);
-                outputStream.writeBytes(value);
-                outputStream.writeBytes(lineEnd);
-            }
-
-            outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
-
-
-            if (200 != connection.getResponseCode()) {
-                Log.e(Tag, "Failed to upload code:" + connection.getResponseCode() + " " + connection.getResponseMessage());
-            }
-
-            inputStream = connection.getInputStream();
-
-            result = this.convertStreamToString(inputStream);
-
-            fileInputStream.close();
-            inputStream.close();
-            outputStream.flush();
-            outputStream.close();
-
-
-        } catch (Exception e) {
-            Log.e(Tag, "Error: " + e);
-        }
-        return result;
-    }
-
-    protected String getDataFromWebsite() {
-        String response = "";
-        BufferedReader br = null;
-
-        HttpURLConnection urlConnection = null;
-        BufferedReader reader = null;
-        try {
-            URL url = new URL("http://10.0.2.2:8081/photogallery/ext_upload");
-
-            // Create the request to OpenWeatherMap, and open the connection
-            urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setRequestMethod("GET");
-            urlConnection.connect();
-
-            // Read the input stream into a String
-            InputStream inputStream = urlConnection.getInputStream();
-            StringBuffer buffer = new StringBuffer();
-            if (inputStream == null) {
-                // Nothing to do.
-                return null;
-            }
-            br = new BufferedReader(new InputStreamReader(inputStream));
-
-            String line = null;
-            while ((line = br.readLine()) != null) {
-                // Since it's JSON, adding a newline isn't necessary (it won't affect parsing)
-                // But it does make debugging a *lot* easier if you print out the completed
-                // buffer for debugging.
-                response += line;
-            }
-
-            if (response.length() == 0) {
-                // Stream was empty.  No point in parsing.
-                return null;
-            }
-
-            br.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally{
-            if (urlConnection != null) {
-                urlConnection.disconnect();
-            }
-            if (reader != null) {
-                try {
-                    br.close();
-                } catch (final IOException e) {
-                    Log.e("PlaceholderFragment", "Error closing stream", e);
-                }
-            }
-        }
-        return response;
-    }
-
-
-    private String convertStreamToString(InputStream is) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
-
-        String line = null;
-        try {
-            while ((line = reader.readLine()) != null) {
-                sb.append(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return sb.toString();
-    }
-
-
 
 
 }

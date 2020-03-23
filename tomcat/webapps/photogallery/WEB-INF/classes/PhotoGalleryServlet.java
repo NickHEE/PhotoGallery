@@ -21,18 +21,24 @@ public class PhotoGalleryServlet extends HttpServlet {
 
 	private String page = "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n"+
 			"<html>\n" +
+			"<style>\n" +
+			".img-container {\n" +
+			"   text-align: center;\n" +
+			"   display: block;\n" +
+			" }\n" +
+			" </style>" +
 			"<head><title> %s </title></head>\n" +
 			"<body bgcolor = \"#f0f0f0\">\n" +
 			"<h1 align = \"center\"> %s </h1>\n" +
 			"<table align = \"center\">"+
-			"<tr><td align=\"left\"> %s </td><td align=\"right\"> %s, %s </td></tr>"+
-			"<tr><td align=\"center\"><img src=\"data\\%s\" style=\"max-width:800px;max-height:600px\"></td></tr>" +
+			"<tr><td align=\"left\"> %s </td><td align=\"right\"> %s, %s </td></tr>" +
+			"<tr><td align=\"center\"><div class=\"img-container\"><img src=\"data\\%s\" style=\"max-width:800px;max-height:600px\"><div></td></tr>" +
 			"</table>"+
+			"<p align = \"center\"> <b>%s</b> </p>" +
 			"<table align = \"center\">"+
 			"<tr>"+
 			"</tr>"+
 			"<tr>"+
-			"<td align=\"center\"> %s </td>" +
 			"</tr>"+
 			"<tr>"+ "<td> &nbsp; </td>" + "</tr>"+
 			"<tr>"+ "<td> &nbsp; </td>" + "</tr>"+

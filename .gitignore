@@ -6,3 +6,6 @@
 /build
 /captures
 .externalNativeBuild
+/tomcat/logs
+/tomcat/temp
+/tomcat/work/Catalina/localhost/photogallery
