@@ -59,7 +59,7 @@
         android:layout_marginLeft="86dp"
         android:layout_marginTop="57dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/search_cancel"

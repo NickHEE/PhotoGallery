@@ -129,7 +129,7 @@ public class PhotoGalleryServlet extends HttpServlet {
 			  latitude = request.getParameter("latitude");
 			  distance = request.getParameter("distance");
 		  }
-		  query += ";";
+		  query += " ORDER BY photoID DESC;";
 
 		  ResultSet rs = stmt.executeQuery(query);
 
@@ -139,7 +139,8 @@ public class PhotoGalleryServlet extends HttpServlet {
 			  double _longitude = Double.valueOf(rs.getString("longitude"));
 
 			  if (longitude.length() > 0 && latitude.length() > 0 && distance.length() > 0) {
-			  		if (getDistance(Double.valueOf(latitude), Double.valueOf(longitude), _latitude, _longitude, 0.0, 0.0) > Double.valueOf(distance)) {
+			  		//if (getDistance(Double.valueOf(latitude), Double.valueOf(longitude), _latitude, _longitude, 0.0, 0.0) > Double.valueOf(distance)) {
+				     if (getDistance(Double.valueOf(latitude), _latitude, Double.valueOf(longitude), _longitude, 0.0, 0.0) > Double.valueOf(distance)) {
 			  			continue;
 			  		}
 			  }
